@@ -1,0 +1,96 @@
+<section class="section about" id='about' (keydown)="onKeyDown($event)" tabindex="0">
+  <div class="container">
+    <div class="section-box">
+      <div class="about-title" data-animate="slideInUp" data-animate-duration="1000">
+        <h3 class="section-title">
+          <span class='n-section-title'>01.</span> {{"AboutMe.Title" | translate}}
+        </h3>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6 mb-4 mb-md-0">
+          <div class="about-description">
+            <p *ngFor='let text of "AboutMe.Paragraphs" | translate; let i = index'
+               [innerHTML]="text"
+               data-animate="fadeInLeft"
+               [attr.data-animate-delay]="200 + (i * 300)"
+               data-animate-duration="800">
+            </p>
+            <ul class="skills-list" data-animate="fadeInUp" data-animate-delay="800">
+              <li class="skill-element"
+                  data-animate="scaleIn"
+                  data-animate-delay="1000">
+                <span class="underline">Corporate Governance</span>
+              </li>
+              <li class="skill-element"
+                  data-animate="scaleIn"
+                  data-animate-delay="1100">
+                <span class="underline">Strategic Development</span>
+              </li>
+              <li class="skill-element"
+                  data-animate="scaleIn"
+                  data-animate-delay="1200">
+                <span class="underline">Business Process Re-engineering</span>
+              </li>
+              <li class="skill-element"
+                  data-animate="scaleIn"
+                  data-animate-delay="1300">
+                <span class="underline">ERP Implementation</span>
+              </li>
+              <li class="skill-element"
+                  data-animate="scaleIn"
+                  data-animate-delay="1400">
+                <span class="underline">KRA Tax Services</span>
+              </li>
+              <li class="skill-element"
+                  data-animate="scaleIn"
+                  data-animate-delay="1500">
+                <span class="underline">NITA Training</span>
+              </li>
+              <li class="skill-element"
+                  data-animate="scaleIn"
+                  data-animate-delay="1600">
+                <span class="underline">Financial Management</span>
+              </li>
+              <li class="skill-element"
+                  data-animate="scaleIn"
+                  data-animate-delay="1700">
+                <span class="underline">Project Management</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 mt-4 mt-md-0 text-center"
+             data-animate="morphIn"
+             data-animate-duration="1200"
+             data-animate-delay="600">
+          <div class="about-img-container">
+            <img (click)='onImageClick()'
+                 class="rounded about-image clickable"
+                 width="100%"
+                 src="../../../../assets/images/vorster-forb-office.jpg"
+                 alt="Vorster Forb Management Consultants Office"
+                 title="Click to view enlarged image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for enlarged image -->
+  <div class="image-modal-overlay"
+       *ngIf="isImageModalOpen"
+       (click)="onModalBackdropClick($event)"
+       [@fadeInOut]>
+    <div class="image-modal-container">
+      <button class="modal-close-btn"
+              (click)="closeImageModal()"
+              aria-label="Close modal">
+        <span>&times;</span>
+      </button>
+      <img class="modal-image"
+           src="../../../../assets/images/vorster-forb-office.jpg"
+           alt="Vorster Forb Management Consultants - Enlarged view"
+           [@zoomIn]>
+    </div>
+  </div>
+</section>

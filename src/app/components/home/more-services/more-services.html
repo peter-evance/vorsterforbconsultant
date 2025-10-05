@@ -1,0 +1,39 @@
+<section class="section more-services">
+  <div class="container">
+    <div class="section-box">
+      <div class="">
+        <h3 class="section-title">
+          <span class='n-section-title'>04.</span> {{"OtherProjects.Title" | translate}}
+        </h3>
+      </div>
+      <div class="mt-5">
+        <div class="row p-0">
+
+          <div *ngFor='let project of "OtherProjects.Projects" | translate; let i = index'
+               class="col-12 col-md-6 col-lg-6 col-xl-4 proyect-col" data-aos="fade-up" data-aos-duration="1000">
+            <div class="more-proyect-box">
+              <div class="row w-100 text-left m-0 p-0">
+                <div class="col-6 p-0">
+                  <img src='../../../../assets/icons/service-icon.svg' width="40" alt="Service icon">
+                </div>
+                <!-- Removed external link icons section as services don't have demo/GitHub links -->
+                <h5 class="other-proyect-title mt-4">{{project.Title}}</h5>
+                <p class="other-proyect-description">
+                  {{project.Description}}
+                </p>
+              </div>
+              <div>
+                <ul class="more-services-skills">
+                  <li *ngFor='let technology of project.Technologies'>
+                    <span class="underline">{{technology}}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

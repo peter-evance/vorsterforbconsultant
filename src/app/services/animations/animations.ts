@@ -16,7 +16,7 @@ export interface AnimationConfig {
 })
 export class Animations {
   private renderer: Renderer2;
-  // private observer: IntersectionObserver;
+  private observer!: IntersectionObserver;
   private animatedElements = new Set<Element>();
   private isScrolling$ = new BehaviorSubject<boolean>(false);
   private scrollDirection$ = new BehaviorSubject<'up' | 'down'>('down');

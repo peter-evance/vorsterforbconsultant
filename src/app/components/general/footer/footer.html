@@ -1,0 +1,26 @@
+<footer>
+    <div [@animateFooter]>
+        <ul class="footer-left-bar d-none d-md-block">
+            <li>
+                <a (click)='analyticsService.sendAnalyticsEvent("click_github", "footer", "github")' href="https://github.com/peter-evance" target='_blank'>
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            <li>
+                <a (click)='analyticsService.sendAnalyticsEvent("click_linkedin", "footer", "github")' href="https://www.linkedin.com/in/peter-evance/" target='_blank'>
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+        </ul>
+        <div class="footer-right-bar d-none d-md-block">
+            <a (click)='analyticsService.sendAnalyticsEvent("click_send_mail", "footer", "email")' href="mailto:peterevance1@gmail.com" target='_blank'>peterevance1&#64;gmail.com </a>
+        </div>
+    </div>
+
+    <div class="footer-credits text-center" >
+        <a (click)='analyticsService.sendAnalyticsEvent("click_github_portfolio_peter-evance", "footer", "click")' href="https://github.com/peter-evance" target="_blank" rel="nofollow noopener noreferrer">
+            <div>Built with Angular by Peter Evance</div>
+        </a>
+    </div>
+
+</footer>
