@@ -1,0 +1,246 @@
+{
+
+  "Meta.Title": "Vorster Forb | Management Consultants",
+  "Meta.Keywords": "Management Consulting, Corporate Governance, Strategic Development, Financial Management, Taxation Services, KRA Agents, NITA Training, Kenya, East Africa",
+  "Meta.Description": "Vorster Forb Management Consultants: Over 20 years providing strategic development, corporate governance, financial management, and taxation services across Kenya and East Africa. Registered KRA tax agents and NITA training providers.",
+  "Header.Item1": "About Us",
+  "Header.Item2": "Services",
+  "Header.Item3": "Expertise",
+  "Header.Item4": "Contact",
+  "Header.cvBtn": "Company Profile",
+  "Header.cvName": "Vorster_Forb_Company_Profile.pdf",
+  "Loading": "Loading...",
+
+  "Banner.Pretitle": "Welcome to Vorster Forb Management Consultants",
+  "Banner.Description": "With <span class='underline'>over 20 years of experience</span> since 2002, we provide comprehensive management consultancy services across Kenya and East Africa. Our expertise spans <span class='underline'>corporate governance</span>, <span class='underline'>strategic development</span>, <span class='underline'>financial management</span>, and <span class='underline'>taxation services</span>, delivering measurable value to SMEs, corporate bodies, NGOs, and government entities.",
+  "Banner.ActionBtn": "Get In Touch",
+
+  "AboutMe.Title": "About Vorster Forb",
+  "AboutMe.Paragraphs": [
+    "Established in <span class='underline'>2002</span>, Vorster Forb Management Consultants has evolved into a trusted partner for organizations seeking transformative business solutions. We serve a diverse portfolio including <span class='underline'>SMEs</span>, <span class='underline'>private sector corporations</span>, <span class='underline'>cooperative societies</span>, and <span class='underline'>non-governmental organizations</span>.",
+    "Our approach combines rigorous analysis with practical implementation. We don't just identify problems—we architect sustainable solutions that align with your strategic objectives while maintaining compliance with regulatory frameworks including KRA requirements and NITA standards.",
+    "As registered <span class='underline'>KRA Tax Agents</span>, <span class='underline'>NITA Training Providers</span>, and <span class='underline'>ICPAK members</span>, we maintain the highest professional standards while delivering cost-effective solutions that drive organizational performance.",
+    "Our core competencies include:"
+  ],
+
+  "Experience.Title": "Our Services",
+  "Experience.Jobs": [
+    {
+      "Tab": "Corporate Governance",
+      "Title": "Governance & Compliance",
+      "Date": "Established 2002",
+      "Description": [
+        "Corporate governance framework design based on transparency, independence, accountability, and integrity",
+        "Director responsibilities and shareholder relations structuring",
+        "Corporate social responsibility (CSR) strategy development",
+        "Environmental, Social, and Governance (ESG) compliance advisory",
+        "Board effectiveness assessments and governance audits",
+        "Stakeholder engagement frameworks aligned with sustainable development goals"
+      ]
+    },
+    {
+      "Tab": "Strategic Dev",
+      "Title": "Strategic Development",
+      "Date": "Core Service",
+      "Description": [
+        "Mission, vision, and strategic intent formulation",
+        "Environmental analysis (PEST) and corporate appraisal (SWOT)",
+        "Strategic choice generation and evaluation for acceptability, suitability, and feasibility",
+        "Strategic implementation roadmaps including resource planning and operational structures",
+        "Change management frameworks and cultural transformation",
+        "Performance monitoring systems and strategic control mechanisms"
+      ]
+    },
+    {
+      "Tab": "BPR & ERP",
+      "Title": "Business Process Re-engineering & ERP",
+      "Date": "Digital Transformation",
+      "Description": [
+        "Fundamental rethinking and radical redesign of business processes",
+        "Enterprise Resource Planning (ERP) system implementation",
+        "Integration of inventory, procurement, manufacturing, finance, and HR operations",
+        "Process optimization for speed, cost reduction, and quality improvement",
+        "Digital transformation strategies leveraging modern ICT infrastructure",
+        "Demand-pull model implementation for inventory optimization"
+      ]
+    },
+    {
+      "Tab": "Training NITA",
+      "Title": "Training & Development (NITA Registered)",
+      "Date": "Capacity Building",
+      "Description": [
+        "NITA-accredited training programs across all management levels",
+        "Corporate governance and strategic management skills",
+        "Financial management, working capital management, and investment appraisal",
+        "Risk management framework development",
+        "Leadership and performance management",
+        "Revenue collection skills and tax planning competencies",
+        "Customer Relationship Management (CRM) training"
+      ]
+    },
+    {
+      "Tab": "Taxation",
+      "Title": "Taxation Services",
+      "Date": "KRA Registered Agents",
+      "Description": [
+        "Filing of annual tax returns and monthly VAT returns/refunds",
+        "Tax compliance certificates and KRA e-TIMS/TIMS system implementation",
+        "PAYE, housing training levy, and payroll management",
+        "Capital gains tax and withholding tax (WHT) advisory",
+        "Turnover tax (TOT) compliance",
+        "Tax planning strategies for cost optimization",
+        "Deferred tax calculations and dispute resolution"
+      ]
+    },
+    {
+      "Tab": "Financial",
+      "Title": "Accounting & Financial Management",
+      "Date": "ICPAK Members",
+      "Description": [
+        "Bookkeeping services and financial reporting (IFRS compliance)",
+        "Auditing and assurance services",
+        "Financial management advisory including profitability analysis",
+        "Cash flow management and working capital optimization",
+        "Financial operations governance and internal control systems",
+        "Management information systems for decision-making support"
+      ]
+    },
+    {
+      "Tab": "Secretarial",
+      "Title": "Secretarial Services",
+      "Date": "Company Administration",
+      "Description": [
+        "Company registration and incorporation services",
+        "Filing of annual returns with the Registrar of Companies",
+        "Share transfer documentation and processing",
+        "Corporate secretarial compliance and statutory filings",
+        "Minutes preparation and record maintenance",
+        "Shareholders' agreements and constitutional documents"
+      ]
+    }
+  ],
+
+  "FeatureProjects.Title": "Our Expertise Areas",
+  "FeatureProjects.Label": "Core Competency",
+  "FeatureProjects.Projects": [
+    {
+      "Title": "Strategic Business Transformation",
+      "Description": "We provide end-to-end strategic development services covering <span class='underline'>mission formulation</span>, <span class='underline'>environmental analysis</span>, <span class='underline'>strategic choice evaluation</span>, and <span class='underline'>implementation roadmaps</span>. Our systematic approach ensures alignment between organizational capabilities and market opportunities while maintaining stakeholder engagement throughout the transformation journey.",
+      "imgs": [
+        "assets/images/strategy/strategic-planning.png",
+        "assets/images/strategy/swot-analysis.png",
+        "assets/images/strategy/implementation.png"
+      ],
+      "Technologies": ["Strategic Analysis", "PEST/SWOT", "Change Management", "Performance Management", "Resource Planning"]
+    },
+    {
+      "Title": "Enterprise Resource Planning Implementation",
+      "Description": "Comprehensive <span class='underline'>ERP system design and deployment</span> integrating inventory management, procurement, manufacturing, finance, and HR operations. We implement <span class='underline'>demand-pull models</span> that reduce inventory costs while improving supply chain responsiveness through real-time data integration across all business functions.",
+      "imgs": [
+        "assets/images/erp/system-integration.jpg",
+        "assets/images/erp/dashboard.jpg",
+        "assets/images/erp/workflow.jpg"
+      ],
+      "Technologies": ["ERP Systems", "Process Integration", "Inventory Management", "Real-time Analytics", "Supply Chain Optimization"]
+    },
+    {
+      "Title": "Business Process Re-engineering",
+      "Description": "Fundamental redesign of business processes to achieve dramatic improvements in <span class='underline'>cost efficiency</span>, <span class='underline'>service quality</span>, and <span class='underline'>delivery speed</span>. Our methodology includes current-state assessment, future-state design, prototype testing, and phased implementation with continuous stakeholder engagement.",
+      "imgs": [
+        "assets/images/bpr/process-mapping.jpg",
+        "assets/images/bpr/optimization.jpg",
+        "assets/images/bpr/implementation.jpg"
+      ],
+      "Technologies": ["Process Analysis", "Workflow Optimization", "Cost Reduction", "Quality Management", "Performance Metrics"]
+    },
+    {
+      "Title": "Corporate Governance Framework",
+      "Description": "Design and implementation of governance structures emphasizing <span class='underline'>transparency</span>, <span class='underline'>accountability</span>, <span class='underline'>independence</span>, and <span class='underline'>integrity</span>. We address director responsibilities, stakeholder engagement, ESG compliance, and corporate social responsibility aligned with sustainable development goals.",
+      "imgs": [
+        "assets/images/governance/board-structure.png",
+        "assets/images/governance/compliance.png",
+        "assets/images/governance/esg-framework.png"
+      ],
+      "Technologies": ["Board Effectiveness", "ESG Compliance", "Stakeholder Management", "Risk Governance", "CSR Strategy"]
+    },
+    {
+      "Title": "Taxation & Compliance Advisory",
+      "Description": "Full-spectrum tax services as <span class='underline'>registered KRA agents</span> covering VAT, PAYE, corporate tax, capital gains tax, and withholding tax. We provide <span class='underline'>e-TIMS implementation</span>, <span class='underline'>tax planning strategies</span>, and <span class='underline'>compliance management</span> that minimize liabilities while ensuring regulatory adherence.",
+      "imgs": [
+        "assets/images/bpr/KRA.jpg",
+        "assets/images/tax/tax-planning.png",
+        "assets/images/tax/etims-system.png"
+      ],
+      "Technologies": ["KRA e-TIMS", "Tax Planning", "VAT Management", "PAYE Processing", "Compliance Reporting"]
+    },
+    {
+      "Title": "Training & Development Programs",
+      "Description": "<span class='underline'>NITA-registered training provider</span> delivering programs across corporate governance, strategic management, financial management, risk management, and leadership development. Our training combines theoretical frameworks with practical application tailored to participant experience levels.",
+      "imgs": [
+        "assets/images/training/nita-programs.png",
+        "assets/images/training/workshop.png",
+        "assets/images/training/certification.png"
+      ],
+      "Technologies": ["NITA Certification", "Leadership Development", "Financial Skills", "Risk Management", "Strategic Thinking"]
+    },
+    {
+      "Title": "Financial Management & Audit",
+      "Description": "Comprehensive accounting services including <span class='underline'>IFRS-compliant reporting</span>, <span class='underline'>audit and assurance</span>, <span class='underline'>financial operations governance</span>, and <span class='underline'>management information systems</span>. Our ICPAK-member team ensures accuracy, compliance, and actionable insights for decision-making.",
+      "imgs": [
+        "assets/images/finance/financial-reports.png",
+        "assets/images/finance/audit-process.png",
+        "assets/images/finance/analytics.png"
+      ],
+      "Technologies": ["IFRS Reporting", "Audit Services", "Cash Flow Management", "Financial Analysis", "Control Systems"]
+    },
+    {
+      "Title": "Project Management Services",
+      "Description": "Professional project management ensuring delivery within <span class='underline'>quality specifications</span>, <span class='underline'>budget constraints</span>, and <span class='underline'>timeline commitments</span>. We employ systematic techniques covering initiation, planning, execution, monitoring, and closure phases with rigorous stakeholder communication.",
+      "imgs": [
+        "assets/images/projects/project-lifecycle.png",
+        "assets/images/projects/resource-allocation.png",
+        "assets/images/projects/monitoring.png"
+      ],
+      "Technologies": ["Project Planning", "Resource Management", "Risk Mitigation", "Quality Control", "Stakeholder Engagement"]
+    }
+  ],
+
+  "OtherProjects.Title": "Additional Services",
+  "OtherProjects.Projects": [
+    {
+      "Title": "Due Diligence & Business Valuation",
+      "Description": "Comprehensive business valuation services for mergers, acquisitions, ownership changes, and liquidation scenarios. We employ rigorous methodologies to determine fair market value and identify operational risks.",
+      "Technologies": ["Business Valuation", "Due Diligence", "M&A Advisory", "Risk Assessment"]
+    },
+    {
+      "Title": "Environmental Impact Assessment",
+      "Description": "Environmental footprint analysis aligned with COP26 goals and sustainable development objectives. We assess carbon footprint, resource utilization, and emissions to support green business practices.",
+      "Technologies": ["EIA", "Carbon Footprint", "Sustainability", "Environmental Management"]
+    },
+    {
+      "Title": "Secretarial & Company Administration",
+      "Description": "Complete company secretarial services including registration, annual returns filing, share transfers, and statutory compliance. We maintain corporate records and ensure adherence to Companies Act requirements.",
+      "Technologies": ["Company Registration", "Annual Returns", "Share Transfers", "Compliance Management"]
+    },
+    {
+      "Title": "Revenue Collection Systems",
+      "Description": "Design and implementation of efficient revenue collection frameworks with internal controls, reconciliation mechanisms, and reporting systems to optimize cash flow and reduce leakage.",
+      "Technologies": ["Revenue Systems", "Collection Controls", "Cash Management", "Reporting"]
+    },
+    {
+      "Title": "Working Capital Management",
+      "Description": "Optimization of current assets and liabilities to enhance liquidity, reduce financing costs, and improve operational efficiency through inventory management and receivables optimization.",
+      "Technologies": ["Liquidity Management", "Cash Conversion", "Inventory Optimization", "Payables Strategy"]
+    },
+    {
+      "Title": "Investment Appraisal",
+      "Description": "Rigorous investment analysis using NPV, IRR, payback period, and risk-adjusted return methodologies to support capital allocation decisions and portfolio optimization.",
+      "Technologies": ["NPV Analysis", "IRR Calculation", "Risk Assessment", "Capital Budgeting"]
+    }
+  ],
+
+  "Contact.Pretitle": "Ready to Transform Your Business?",
+  "Contact.Title": "Let's Discuss Your Needs",
+  "Contact.Content": "Whether you need strategic guidance, compliance support, or operational transformation, our team is ready to deliver tailored solutions. Contact us to schedule a consultation with our experienced consultants.",
+  "Contact.Btn": "Schedule Consultation"
+}
