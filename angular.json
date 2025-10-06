@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/vorsterforbconsultant",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -43,11 +44,8 @@
               "src/styles.scss",
               "src/fonts.scss"
             ],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "outputMode": "static",
+            "ssr": false
           },
           "configurations": {
             "production": {
