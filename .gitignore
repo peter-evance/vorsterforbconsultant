@@ -1,6 +1,7 @@
 .vscode
 .idea
 .angular
+.DS_Store
 
 # Logs
 logs
