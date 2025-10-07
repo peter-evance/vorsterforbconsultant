@@ -157,9 +157,9 @@
       "Title": "Corporate Governance Framework",
       "Description": "Design and implementation of governance structures emphasizing <span class='underline'>transparency</span>, <span class='underline'>accountability</span>, <span class='underline'>independence</span>, and <span class='underline'>integrity</span>. We address director responsibilities, stakeholder engagement, ESG compliance, and corporate social responsibility aligned with sustainable development goals.",
       "imgs": [
-        "assets/images/governance/board-structure.png",
-        "assets/images/governance/compliance.png",
-        "assets/images/governance/esg-framework.png"
+        "assets/images/governance/board-structure.webp",
+        "assets/images/governance/compliance.jpg",
+        "assets/images/governance/esg-framework.webp"
       ],
       "Technologies": ["Board Effectiveness", "ESG Compliance", "Stakeholder Management", "Risk Governance", "CSR Strategy"]
     },
@@ -167,7 +167,6 @@
       "Title": "Taxation & Compliance Advisory",
       "Description": "Full-spectrum tax services as <span class='underline'>registered KRA agents</span> covering VAT, PAYE, corporate tax, capital gains tax, and withholding tax. We provide <span class='underline'>e-TIMS implementation</span>, <span class='underline'>tax planning strategies</span>, and <span class='underline'>compliance management</span> that minimize liabilities while ensuring regulatory adherence.",
       "imgs": [
-        "assets/images/bpr/KRA.jpg",
         "assets/images/tax/tax-planning.png",
         "assets/images/tax/etims-system.png"
       ],
