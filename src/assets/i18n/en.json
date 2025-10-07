@@ -147,9 +147,9 @@
       "Title": "Business Process Re-engineering",
       "Description": "Fundamental redesign of business processes to achieve dramatic improvements in <span class='underline'>cost efficiency</span>, <span class='underline'>service quality</span>, and <span class='underline'>delivery speed</span>. Our methodology includes current-state assessment, future-state design, prototype testing, and phased implementation with continuous stakeholder engagement.",
       "imgs": [
-        "assets/images/bpr/process-mapping.jpg",
-        "assets/images/bpr/optimization.jpg",
-        "assets/images/bpr/implementation.jpg"
+        "assets/images/bpr/process-mapping.webp",
+        "assets/images/bpr/optimization.webp",
+        "assets/images/bpr/implementation.webp"
       ],
       "Technologies": ["Process Analysis", "Workflow Optimization", "Cost Reduction", "Quality Management", "Performance Metrics"]
     },
