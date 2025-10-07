@@ -186,9 +186,9 @@
       "Title": "Financial Management & Audit",
       "Description": "Comprehensive accounting services including <span class='underline'>IFRS-compliant reporting</span>, <span class='underline'>audit and assurance</span>, <span class='underline'>financial operations governance</span>, and <span class='underline'>management information systems</span>. Our ICPAK-member team ensures accuracy, compliance, and actionable insights for decision-making.",
       "imgs": [
-        "assets/images/finance/financial-reports.png",
-        "assets/images/finance/audit-process.png",
-        "assets/images/finance/analytics.png"
+        "assets/images/finance/financial-reports.jpg",
+        "assets/images/finance/audit-process.jpg",
+        "assets/images/finance/analytics.webp"
       ],
       "Technologies": ["IFRS Reporting", "Audit Services", "Cash Flow Management", "Financial Analysis", "Control Systems"]
     },
