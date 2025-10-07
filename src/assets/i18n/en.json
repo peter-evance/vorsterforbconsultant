@@ -167,8 +167,8 @@
       "Title": "Taxation & Compliance Advisory",
       "Description": "Full-spectrum tax services as <span class='underline'>registered KRA agents</span> covering VAT, PAYE, corporate tax, capital gains tax, and withholding tax. We provide <span class='underline'>e-TIMS implementation</span>, <span class='underline'>tax planning strategies</span>, and <span class='underline'>compliance management</span> that minimize liabilities while ensuring regulatory adherence.",
       "imgs": [
-        "assets/images/tax/tax-planning.png",
-        "assets/images/tax/etims-system.png"
+        "assets/images/tax/tax-planning.webp",
+        "assets/images/tax/etims-system.jpg"
       ],
       "Technologies": ["KRA e-TIMS", "Tax Planning", "VAT Management", "PAYE Processing", "Compliance Reporting"]
     },
