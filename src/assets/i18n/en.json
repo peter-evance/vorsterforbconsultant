@@ -147,7 +147,7 @@
       "Title": "Business Process Re-engineering",
       "Description": "Fundamental redesign of business processes to achieve dramatic improvements in <span class='underline'>cost efficiency</span>, <span class='underline'>service quality</span>, and <span class='underline'>delivery speed</span>. Our methodology includes current-state assessment, future-state design, prototype testing, and phased implementation with continuous stakeholder engagement.",
       "imgs": [
-        "assets/images/bpr/process-mapping.webp",
+        "assets/images/bpr/process-mapping.jpg",
         "assets/images/bpr/optimization.webp",
         "assets/images/bpr/implementation.webp"
       ],
@@ -196,9 +196,9 @@
       "Title": "Project Management Services",
       "Description": "Professional project management ensuring delivery within <span class='underline'>quality specifications</span>, <span class='underline'>budget constraints</span>, and <span class='underline'>timeline commitments</span>. We employ systematic techniques covering initiation, planning, execution, monitoring, and closure phases with rigorous stakeholder communication.",
       "imgs": [
-        "assets/images/projects/project-lifecycle.png",
-        "assets/images/projects/resource-allocation.png",
-        "assets/images/projects/monitoring.png"
+        "assets/images/projects/project-lifecycle.webp",
+        "assets/images/projects/resource-allocation.jpg",
+        "assets/images/projects/monitoring.webp"
       ],
       "Technologies": ["Project Planning", "Resource Management", "Risk Mitigation", "Quality Control", "Stakeholder Engagement"]
     }
