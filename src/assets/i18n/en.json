@@ -127,9 +127,9 @@
       "Title": "Strategic Business Transformation",
       "Description": "We provide end-to-end strategic development services covering <span class='underline'>mission formulation</span>, <span class='underline'>environmental analysis</span>, <span class='underline'>strategic choice evaluation</span>, and <span class='underline'>implementation roadmaps</span>. Our systematic approach ensures alignment between organizational capabilities and market opportunities while maintaining stakeholder engagement throughout the transformation journey.",
       "imgs": [
-        "assets/images/strategy/strategic-planning.png",
-        "assets/images/strategy/swot-analysis.png",
-        "assets/images/strategy/implementation.png"
+        "assets/images/strategy/strategic-planning.webp",
+        "assets/images/strategy/swot-analysis.webp",
+        "assets/images/strategy/implementation.webp"
       ],
       "Technologies": ["Strategic Analysis", "PEST/SWOT", "Change Management", "Performance Management", "Resource Planning"]
     },
