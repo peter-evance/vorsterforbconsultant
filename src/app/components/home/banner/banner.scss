@@ -1,251 +1,348 @@
 @use "../../../../variables" as *;
 
-.banner{
-    min-height: 100vh;
+.banner {
+  min-height: 100vh;
+  min-height: 100dvh; // Modern viewport units for mobile browsers
+  position: relative;
+  overflow: hidden;
+
+  // Fallback gradient background
+  background: linear-gradient(135deg, #0a192f 0%, #172a45 50%, #1e3a5f 100%);
+
+  // Background image container
+  .banner-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+
+    &.loaded {
+      opacity: 1;
+    }
+
+    img {
+      object-fit: cover;
+      object-position: center center;
+
+      // Mobile: focus on right side of image if it contains key content
+      @media only screen and (max-width: 768px) {
+        object-position: 65% center;
+      }
+
+      @media only screen and (max-width: 480px) {
+        object-position: 70% center;
+      }
+    }
+  }
+
+  // Overlay to darken background
+  .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 25, 47, 0.85);
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+
+    &.loaded {
+      opacity: 1;
+    }
+  }
+
+  .container {
+    display: table;
+    height: 100vh;
+    height: 100dvh;
     position: relative;
-    overflow: hidden;
-    // z-index: 9999;
+    z-index: 3;
+    width: 100%;
+    padding: 0 20px;
 
-    // Fallback: gradiente de fondo en caso de que el video no funcione
-    background: linear-gradient(135deg, #0a192f 0%, #172a45 50%, #1e3a5f 100%);
-
-    // Video de fondo
-    .banner-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 1;
-        opacity: 0;
-        transition: opacity 1.2s ease-in-out;
-
-        &.loaded {
-            opacity: 1;
-        }
+    @media (max-width: 768px) {
+      padding: 0 16px;
     }
 
-    // Overlay para oscurecer el video
-    .banner-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(10, 25, 47, 0.85); // Más oscuro para mejor legibilidad
-        z-index: 2;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-
-        &.loaded {
-            opacity: 1;
-        }
+    @media (max-width: 480px) {
+      padding: 0 12px;
     }
 
-    .container{
-        display: table;
-        height: 100vh;
+    .section-box-banner {
+      display: table-cell;
+      vertical-align: middle;
+      padding: 20px 0;
+
+      .content {
+        margin-top: 98px;
         position: relative;
-        z-index: 3;
+        z-index: 4;
 
-        .section-box-banner{
-            display: table-cell;
-            vertical-align: middle;
-
-            .content{
-                margin-top: 98px;
-                position: relative;
-                z-index: 4;
-            }
-
-            .banner-pretitle h1{
-                color: #64ffda;
-                margin: 0 0 20px 3px;
-                font-size: 16px;
-                font-weight: normal;
-                font-family: $CodeFont;
-                opacity: 0;
-                transform: translateY(-30px);
-                transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            }
-
-            .banner-name {
-                font-weight: 600;
-                font-size: 80px;
-                line-height: 1.1;
-                margin: 0;
-                font-family: $MainFont;
-                color: $LightestSlate;
-                opacity: 0;
-                overflow: hidden;
-                white-space: nowrap;
-
-                .cursor {
-                    color: rgba(100, 255, 218, 0.8);
-                    font-weight: normal;
-                    display: inline-block;
-                    animation: cursor-blink 1s infinite;
-                }
-
-                .cursor-blink {
-                    animation: cursor-blink 1s infinite !important;
-                }
-
-                @keyframes cursor-blink {
-                    0%, 50% { opacity: 1; }
-                    51%, 100% { opacity: 0; }
-                }
-            }
-
-            .banner-subtitle {
-                font-weight: 600;
-                font-size: 80px;
-                line-height: 1.1;
-                margin: 0;
-                font-family: $MainFont;
-                color: $Slate;
-                opacity: 0;
-                position: relative;
-                transition: all 0.3s ease;
-
-                &::before,
-                &::after {
-                    content: attr(data-text);
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    opacity: 0;
-                }
-
-                &::before {
-                    color: #ff00ff;
-                    z-index: -1;
-                }
-
-                &::after {
-                    color: #00ffff;
-                    z-index: -2;
-                }
-            }
-
-            .banner-description{
-                margin-bottom: 70px;
-                opacity: 0;
-                transform: translateY(20px);
-                filter: blur(3px);
-                transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
-                p{
-                    max-width: 500px;
-                    font-size: 20px;
-                    line-height: 1.5;
-                }
-            }
-
-            .div-btn-banner{
-                height: 43px;
-
-                .main-btn {
-                    opacity: 0;
-                    transform: scale(0.8);
-                    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-                    position: relative;
-                    overflow: hidden;
-                    background: linear-gradient(45deg, transparent, rgba(100, 255, 218, 0.1), transparent);
-                    background-size: 300% 300%;
-                    background-position: 0% 50%;
-
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: -100%;
-                        width: 100%;
-                        height: 100%;
-                        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-                        transition: left 0.5s ease;
-                    }
-
-                    &:hover {
-                        background-position: 100% 50%;
-                        animation: shimmer 2s infinite;
-
-                        &::before {
-                            left: 100%;
-                        }
-                    }
-                }
-            }
+        @media (max-width: 768px) {
+          margin-top: 60px;
         }
-    }
-}
 
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-}
-
-@keyframes cursor-blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-}
-
-.cursor-blink {
-    animation: cursor-blink 1s infinite !important;
-}
-
-@keyframes blink-caret {
-    from, to { border-color: rgba(100, 255, 218, 0.8); }
-    50% { border-color: transparent; }
-}
-
-@keyframes shimmer {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-// Responsive
-@media (max-width: 768px) {
-    .banner {
-        .container .section-box-banner {
-            .banner-name,
-            .banner-subtitle {
-                font-size: 50px;
-            }
-
-            .content {
-                margin-top: 50px;
-            }
-
-            .banner-description p {
-                font-size: 18px;
-            }
+        @media (max-width: 480px) {
+          margin-top: 40px;
         }
-    }
-}
+      }
 
-@media (max-width: 480px) {
-    .banner {
-        .container .section-box-banner {
-            .banner-name,
-            .banner-subtitle {
-                font-size: 40px;
-            }
+      .banner-pretitle h1 {
+        color: #64ffda;
+        margin: 0 0 20px 3px;
+        font-size: clamp(14px, 2vw, 16px);
+        font-weight: normal;
+        font-family: $CodeFont;
+        opacity: 0;
+        transform: translateY(-30px);
+        transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        will-change: opacity, transform;
 
-            .banner-description p {
-                font-size: 16px;
-            }
+        @media (max-width: 480px) {
+          margin: 0 0 16px 2px;
         }
-    }
-}
+      }
 
-@media only screen and (max-width: 768px) {
-  .banner-video {
-    object-position: 80% 50%;
+      .banner-name {
+        font-weight: 600;
+        font-size: clamp(32px, 8vw, 80px);
+        line-height: 1.1;
+        margin: 0;
+        font-family: $MainFont;
+        color: $LightestSlate;
+        opacity: 0;
+        overflow: hidden;
+        white-space: normal;
+        word-wrap: break-word;
+        max-width: 100%;
+        will-change: opacity;
+
+        @media (max-width: 768px) {
+          font-size: clamp(28px, 7vw, 50px);
+          line-height: 1.2;
+        }
+
+        @media (max-width: 480px) {
+          font-size: clamp(24px, 6vw, 40px);
+          line-height: 1.3;
+        }
+
+        .cursor {
+          color: rgba(100, 255, 218, 0.8);
+          font-weight: normal;
+          display: inline-block;
+          animation: cursor-blink 1s infinite;
+        }
+
+        .cursor-blink {
+          animation: cursor-blink 1s infinite !important;
+        }
+
+        @keyframes cursor-blink {
+          0%, 50% { opacity: 1; }
+          51%, 100% { opacity: 0; }
+        }
+      }
+
+      .banner-subtitle {
+        font-weight: 600;
+        font-size: clamp(32px, 8vw, 80px);
+        line-height: 1.1;
+        margin: 0;
+        font-family: $MainFont;
+        color: $Slate;
+        opacity: 0;
+        position: relative;
+        transition: all 0.3s ease;
+        word-wrap: break-word;
+        max-width: 100%;
+        will-change: opacity, transform;
+
+        @media (max-width: 768px) {
+          font-size: clamp(28px, 7vw, 50px);
+          line-height: 1.2;
+        }
+
+        @media (max-width: 480px) {
+          font-size: clamp(24px, 6vw, 40px);
+          line-height: 1.3;
+        }
+
+        &::before,
+        &::after {
+          content: attr(data-text);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+        }
+
+        &::before {
+          color: #ff00ff;
+          z-index: -1;
+        }
+
+        &::after {
+          color: #00ffff;
+          z-index: -2;
+        }
+      }
+
+      .banner-description {
+        margin-bottom: 70px;
+        opacity: 0;
+        transform: translateY(20px);
+        filter: blur(3px);
+        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        will-change: opacity, transform, filter;
+
+        @media (max-width: 768px) {
+          margin-bottom: 50px;
+        }
+
+        @media (max-width: 480px) {
+          margin-bottom: 40px;
+        }
+
+        p {
+          max-width: 500px;
+          font-size: clamp(16px, 2.5vw, 20px);
+          line-height: 1.6;
+
+          @media (max-width: 768px) {
+            max-width: 100%;
+            line-height: 1.7;
+          }
+
+          @media (max-width: 480px) {
+            line-height: 1.8;
+          }
+        }
+      }
+
+      .div-btn-banner {
+        min-height: 43px;
+
+        @media (max-width: 480px) {
+          min-height: 48px; // Larger touch target on mobile
+        }
+
+        .main-btn {
+          opacity: 0;
+          transform: scale(0.8);
+          transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+          position: relative;
+          overflow: hidden;
+          background: linear-gradient(45deg, transparent, rgba(100, 255, 218, 0.1), transparent);
+          background-size: 300% 300%;
+          background-position: 0% 50%;
+          will-change: transform, opacity;
+
+          @media (max-width: 480px) {
+            padding: 14px 28px; // Larger touch target
+            font-size: 16px;
+          }
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+          }
+
+          &:hover {
+            background-position: 100% 50%;
+            animation: shimmer 2s infinite;
+
+            &::before {
+              left: 100%;
+            }
+          }
+
+          // Touch device optimization
+          @media (hover: none) and (pointer: coarse) {
+            &:active {
+              transform: scale(0.95);
+            }
+          }
+        }
+      }
+    }
   }
 }
 
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes cursor-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: cursor-blink 1s infinite !important;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: rgba(100, 255, 218, 0.8); }
+  50% { border-color: transparent; }
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+// Landscape mobile optimization
+@media only screen and (max-width: 896px) and (max-height: 414px) and (orientation: landscape) {
+  .banner {
+    .container .section-box-banner {
+      .content {
+        margin-top: 20px;
+      }
+
+      .banner-name,
+      .banner-subtitle {
+        font-size: clamp(24px, 5vw, 40px);
+      }
+
+      .banner-description {
+        margin-bottom: 30px;
+
+        p {
+          font-size: clamp(14px, 2vw, 16px);
+        }
+      }
+    }
+  }
+}
+
+// Very small screens
+@media only screen and (max-width: 360px) {
+  .banner {
+    .container .section-box-banner {
+      .banner-name,
+      .banner-subtitle {
+        font-size: clamp(22px, 5.5vw, 32px);
+      }
+
+      .banner-description p {
+        font-size: 14px;
+      }
+    }
+  }
+}
