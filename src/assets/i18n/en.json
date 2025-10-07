@@ -137,9 +137,9 @@
       "Title": "Enterprise Resource Planning Implementation",
       "Description": "Comprehensive <span class='underline'>ERP system design and deployment</span> integrating inventory management, procurement, manufacturing, finance, and HR operations. We implement <span class='underline'>demand-pull models</span> that reduce inventory costs while improving supply chain responsiveness through real-time data integration across all business functions.",
       "imgs": [
-        "assets/images/erp/system-integration.jpg",
-        "assets/images/erp/dashboard.jpg",
-        "assets/images/erp/workflow.jpg"
+        "assets/images/erp/system-integration.webp",
+        "assets/images/erp/dashboard.webp",
+        "assets/images/erp/workflow.webp"
       ],
       "Technologies": ["ERP Systems", "Process Integration", "Inventory Management", "Real-time Analytics", "Supply Chain Optimization"]
     },
