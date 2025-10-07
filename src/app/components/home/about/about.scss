@@ -2,201 +2,340 @@
 
 .about{
 
-    .about-description{
-        margin-top: 30px;
-        max-width: 480px;
+  .about-description{
+    margin-top: 30px;
+    max-width: 480px;
+  }
+
+  .about-img-container{
+    margin: auto;
+    padding-top: 15px; // Add padding for carousel dots/title
+    position: relative; // Needed for positioning of leader info
+
+    // Static Office Image Border Logic (Removed/Disabled in previous step, ensuring it remains so)
+    &:after{
+      display: none;
     }
 
-    .about-img-container{
-        margin: auto;
-
-        &:after{
-            content: "";
-            border: 2px solid #64ffda;
-            z-index: 0;
-            display: block;
-            position: relative;
-            width: 530px;
-            height: 330px;
-            border-radius: 3px;
-            bottom: 313px;
-            left: 23px;
-        }
-
-        @media (max-width: 1200px){
-            &:after {
-                width: 446px;
-                height: 273px;
-                bottom: 257px;
-                left: 23px;
-            }
-        }
-
-        @media (max-width: 992px){
-            &:after {
-                width: 300px;
-                height: 180px;
-                bottom: 180px;
-                left: 23px;
-            }
-        }
-
-        img{
-            z-index: 2;
-            position: relative;
-
-            &.clickable {
-                cursor: pointer;
-                transition: transform 0.3s ease, filter 0.3s ease;
-
-                &:hover {
-                    transform: scale(1.02);
-                    filter: brightness(1.1);
-                }
-            }
-        }
+    // NEW: Leader Carousel Specific Styles
+    &.leader-carousel-container {
+      max-width: 450px; // Constrain the carousel size
+      margin: auto;
     }
 
-    .skills-list{
-        display: grid;
-        grid-template-columns: repeat(2,minmax(140px,200px));
-        overflow: hidden;
-        padding: 0;
-        margin: 20px 0 0 0;
-        list-style: none;
+    .leadership-title {
+      color: $Green;
+      font-size: 16px;
+      font-family: $CodeFont;
+      margin-bottom: 15px;
+      text-align: left;
     }
 
-    .skill-element{
-        position: relative;
-        margin-bottom: 10px;
-        padding-left: 20px;
-        font-size: 13px;
-        font-family: $CodeFont;
+    .leader-slide {
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      border-radius: 5px;
+      box-shadow: 0 10px 30px -15px $Black;
+      transition: all 0.3s ease;
+      display: block; // Ensure the div takes up the space
+      height: 450px; // Fixed height to match image size and prevent collapse
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 30px -15px $Black;
+      }
+    }
+
+    // NEW: Placeholder for missing image
+    .leader-image-placeholder {
+      // Inherits dimensions and box-shadow from .leader-slide indirectly
+      position: absolute; // Allows content to be placed on top
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $LightNavy;
+      color: $Slate;
+      font-family: $CodeFont;
+      font-size: 14px;
+      border: 2px dashed $Slate;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .leader-image{
+      z-index: 1; // Set image z-index below info overlay
+      position: relative;
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      //filter: grayscale(100%);
+      transition: all 0.5s ease;
+
+      //&:hover {
+      //  filter: grayscale(0%);
+      //}
+    }
+
+    .leader-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      // FIX: Stronger gradient and higher Z-index to always be visible over the image
+      background: linear-gradient(0deg, rgba(17, 34, 64, 0.95) 0%, rgba(17, 34, 64, 0.7) 50%, rgba(17, 34, 64, 0.0) 100%);
+      padding: 20px 15px 10px;
+      color: $LightestSlate;
+      text-align: left;
+      transition: all 0.3s ease;
+      z-index: 5; // Ensure it is on top of the image (z-index: 1)
+
+      .leader-name {
+        margin-bottom: 0;
+        font-size: 18px;
+        color: $Green;
+      }
+      .leader-title {
+        font-size: 14px;
         color: $Slate;
-        span{
-          padding-bottom: 5px;
-        }
-
-        &:before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: $Green;
-            font-size: 14px;
-            line-height: 12px;
-        }
+      }
     }
 
-}
+    img{
+      &.clickable {
+        cursor: pointer;
+        transition: transform 0.3s ease, filter 0.3s ease;
+      }
+    }
+  }
 
-// Estilos para el modal de imagen
-.image-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    backdrop-filter: blur(5px);
-}
+  .skills-list{
+    display: grid;
+    grid-template-columns: repeat(2,minmax(140px,200px));
+    overflow: hidden;
+    padding: 0;
+    margin: 20px 0 0 0;
+    list-style: none;
+  }
 
-.image-modal-container {
+  .skill-element{
     position: relative;
-    max-width: 90vw;
-    max-height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    font-size: 13px;
+    font-family: $CodeFont;
+    color: $Slate;
+    span{
+      padding-bottom: 5px;
+    }
+
+    &:before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: $Green;
+      font-size: 14px;
+      line-height: 12px;
+    }
+  }
 }
 
-.modal-image {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 8px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
-    border: 2px solid $Green;
+// Estilos para el modal de imagen (keeping old for office image)
+.image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
 }
+.image-modal-container {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-image {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+  border: 2px solid $Green;
+}
+
+// NEW: Styles for the Leader Details Modal
+.leader-modal-overlay {
+  @extend .image-modal-overlay; // Re-use general overlay styles
+  background-color: rgba(17, 34, 64, 0.95); // Slightly different, more defined background
+  z-index: 10000; // Higher z-index than image modal
+}
+.leader-modal-container {
+  background-color: $Navy; // Background color for the modal box
+  color: $LightestSlate;
+  border-radius: 8px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+  border: 2px solid $Green;
+  padding: 30px;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative; // Position the close button relative to this
+}
+
+.leader-details-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.leader-image-box {
+  margin-bottom: 20px;
+}
+
+.leader-modal-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid $Green;
+}
+
+// NEW: Placeholder for leader modal
+.leader-modal-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $LightNavy;
+  border: 2px dashed $Green !important;
+
+  p {
+    margin: 0;
+    color: $Green;
+    font-family: $CodeFont;
+    font-size: 12px;
+  }
+}
+
+.leader-modal-name {
+  color: $LightestSlate;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.leader-modal-title {
+  color: $Green;
+  font-size: 16px;
+  font-family: $CodeFont;
+  margin-bottom: 15px;
+}
+
+.leader-modal-bio {
+  font-size: 15px;
+  line-height: 1.6;
+  color: $Slate;
+}
+
 
 .modal-close-btn {
-    position: absolute;
-    top: -50px;
-    right: -10px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid $Green;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    color: $Green;
-    font-size: 24px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+  position: absolute;
+  top: -50px;
+  right: -10px;
+  // Keep other styles from previous modal
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid $Green;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: $Green;
+  font-size: 24px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 
-    &:hover {
-        background: rgba(255, 255, 255, 0.2);
-        transform: scale(1.1);
-        color: white;
-        border-color: white;
-    }
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+    color: white;
+    border-color: white;
+  }
 
-    span {
-        line-height: 1;
-        margin-top: -2px;
-    }
+  span {
+    line-height: 1;
+    margin-top: -2px;
+  }
 }
 
+@media (max-width: 768px) {
+  .leader-modal-container {
+    padding: 20px;
+    max-width: 90vw;
+    max-height: 95vh;
+  }
+  .leader-modal-name {
+    font-size: 20px;
+  }
+  .leader-modal-image {
+    width: 120px;
+    height: 120px;
+  }
+  .modal-close-btn {
+    top: -40px;
+    right: 0;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+// Media queries from original code (adjusted for carousel)
 @media (min-width: 992px) and (max-width: 1300px){
-    .about-img-container{
-        margin-left: auto;
-        margin-right: 0;
-    }
+  .about-img-container{
+    margin-left: auto;
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 500px){
-    .about{
-       
-        .about-img-container:after {
-            width: 200px;
-            height: 200px;
-            bottom: 190px;
-            left: 74px;
-        }
+  .about{
+    .about-img-container {
+      width: 100%;
+      .leader-slide {
+        height: auto; // Allow height to adjust on very small screens if necessary
+      }
+      &:after {
+        display: none; // Ensure the static border is gone
+      }
     }
+  }
 
-    .modal-close-btn {
-        top: -40px;
-        right: 0;
-        width: 35px;
-        height: 35px;
-        font-size: 20px;
-    }
+  .modal-close-btn {
+    top: -40px;
+    right: 0;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
 
-    .image-modal-container {
-        max-width: 95vw;
-        max-height: 80vh;
-    }
+  .image-modal-container {
+    max-width: 95vw;
+    max-height: 80vh;
+  }
 }
-
-@media (max-width: 500px){
-    .about{
-
-        .about-img-container {
-            width: 100%;
-
-         
-
-            &:after {
-                display: none;
-            }
-        }
-    }
-}
-

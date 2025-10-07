@@ -1,5 +1,4 @@
 {
-
   "Meta.Title": "Vorster Forb | Management Consultants",
   "Meta.Keywords": "Management Consulting, Corporate Governance, Strategic Development, Financial Management, Taxation Services, KRA Agents, NITA Training, Kenya, East Africa",
   "Meta.Description": "Vorster Forb Management Consultants: Over 20 years providing strategic development, corporate governance, financial management, and taxation services across Kenya and East Africa. Registered KRA tax agents and NITA training providers.",
@@ -21,6 +20,27 @@
     "Our approach combines rigorous analysis with practical implementation. We don't just identify problems—we architect sustainable solutions that align with your strategic objectives while maintaining compliance with regulatory frameworks including KRA requirements and NITA standards.",
     "As registered <span class='underline'>KRA Tax Agents</span>, <span class='underline'>NITA Training Providers</span>, and <span class='underline'>ICPAK members</span>, we maintain the highest professional standards while delivering cost-effective solutions that drive organizational performance.",
     "Our core competencies include:"
+  ],
+
+  "Leadership.Title": "Our Leadership Team",
+  "Leadership.Team": [
+    {
+      "Name": "Mr. John Awiti",
+      "Title": "Chief Executive Officer (CEO)",
+      "Bio": "Dr. Vorster is a seasoned corporate governance expert with over 25 years in strategic planning and financial oversight. He guides the firm's vision and ensures client solutions meet the highest global standards.",
+      "Img": "assets/images/team/john_awiti.jpeg"
+    },
+    {
+      "Name": "Eng. David M. Ochieng",
+      "Title": "Head of Technical Services",
+      "Bio": "David leads the firm's NITA-accredited training programs and project management portfolio. He has a passion for capacity building and ensuring the practical application of theoretical knowledge.",
+      "Img": "assets/images/team/1.jpeg"
+    },
+    {
+      "Name": "Mr. Stephen P. Chege, CPA",
+      "Title": "Lead Tax & Financial Consultant",
+      "Bio": "As a registered KRA agent and ICPAK member, Stephen provides expert advisory on complex taxation issues, financial reporting, and audit assurance, helping clients achieve maximum compliance."
+    }
   ],
 
   "Experience.Title": "Our Services",
