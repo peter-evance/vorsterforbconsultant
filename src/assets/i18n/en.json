@@ -176,9 +176,9 @@
       "Title": "Training & Development Programs",
       "Description": "<span class='underline'>NITA-registered training provider</span> delivering programs across corporate governance, strategic management, financial management, risk management, and leadership development. Our training combines theoretical frameworks with practical application tailored to participant experience levels.",
       "imgs": [
-        "assets/images/training/nita-programs.png",
-        "assets/images/training/workshop.png",
-        "assets/images/training/certification.png"
+        "assets/images/training/nita-programs.jpg",
+        "assets/images/training/workshop.jpeg",
+        "assets/images/training/certification.webp"
       ],
       "Technologies": ["NITA Certification", "Leadership Development", "Financial Skills", "Risk Management", "Strategic Thinking"]
     },
