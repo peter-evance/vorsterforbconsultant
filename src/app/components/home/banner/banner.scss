@@ -2,14 +2,12 @@
 
 .banner {
   min-height: 100vh;
-  min-height: 100dvh; // Modern viewport units for mobile browsers
+  min-height: 100dvh;
   position: relative;
   overflow: hidden;
 
-  // Fallback gradient background
   background: linear-gradient(135deg, #0a192f 0%, #172a45 50%, #1e3a5f 100%);
 
-  // Background image container
   .banner-background {
     position: absolute;
     top: 0;
@@ -28,7 +26,6 @@
       object-fit: cover;
       object-position: center center;
 
-      // Mobile: focus on right side of image if it contains key content
       @media only screen and (max-width: 768px) {
         object-position: 65% center;
       }
@@ -39,14 +36,14 @@
     }
   }
 
-  // Overlay to darken background
+  /* --- UPDATED: overlay now less opaque for better text contrast --- */
   .banner-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(10, 25, 47, 0.85);
+    background: rgba(10, 25, 47, 0.65);
     z-index: 2;
     opacity: 0;
     transition: opacity 1s ease-in-out;
@@ -93,7 +90,7 @@
       }
 
       .banner-pretitle h1 {
-        color: #64ffda;
+        color: $AccentPrimary;
         margin: 0 0 20px 3px;
         font-size: clamp(14px, 2vw, 16px);
         font-weight: normal;
@@ -108,91 +105,51 @@
         }
       }
 
+      /* --- UPDATED: Company Name highly visible now --- */
       .banner-name {
-        font-weight: 600;
-        font-size: clamp(32px, 8vw, 80px);
+        font-weight: 700;
+        font-size: clamp(36px, 8vw, 84px);
         line-height: 1.1;
         margin: 0;
         font-family: $MainFont;
-        color: $LightestSlate;
+        color: $AccentLight;
         opacity: 0;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
         overflow: hidden;
-        white-space: normal;
         word-wrap: break-word;
         max-width: 100%;
         will-change: opacity;
 
         @media (max-width: 768px) {
-          font-size: clamp(28px, 7vw, 50px);
+          font-size: clamp(30px, 7vw, 54px);
           line-height: 1.2;
         }
 
         @media (max-width: 480px) {
-          font-size: clamp(24px, 6vw, 40px);
+          font-size: clamp(26px, 6vw, 44px);
           line-height: 1.3;
         }
 
         .cursor {
           color: rgba(100, 255, 218, 0.8);
-          font-weight: normal;
           display: inline-block;
           animation: cursor-blink 1s infinite;
         }
-
-        .cursor-blink {
-          animation: cursor-blink 1s infinite !important;
-        }
-
-        @keyframes cursor-blink {
-          0%, 50% { opacity: 1; }
-          51%, 100% { opacity: 0; }
-        }
       }
 
+      /* --- UPDATED: Subtitle lighter and clearer --- */
       .banner-subtitle {
-        font-weight: 600;
-        font-size: clamp(32px, 8vw, 80px);
-        line-height: 1.1;
-        margin: 0;
-        font-family: $MainFont;
-        color: $Slate;
+        font-weight: 500;
+        font-size: clamp(22px, 4vw, 36px);
+        line-height: 1.2;
+        margin-top: 8px;
+        color: rgba($White, 0.9);
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+        will-change: opacity, transform;
         opacity: 0;
         position: relative;
-        transition: all 0.3s ease;
-        word-wrap: break-word;
         max-width: 100%;
-        will-change: opacity, transform;
-
-        @media (max-width: 768px) {
-          font-size: clamp(28px, 7vw, 50px);
-          line-height: 1.2;
-        }
-
-        @media (max-width: 480px) {
-          font-size: clamp(24px, 6vw, 40px);
-          line-height: 1.3;
-        }
-
-        &::before,
-        &::after {
-          content: attr(data-text);
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          opacity: 0;
-        }
-
-        &::before {
-          color: #ff00ff;
-          z-index: -1;
-        }
-
-        &::after {
-          color: #00ffff;
-          z-index: -2;
-        }
       }
 
       .banner-description {
@@ -231,7 +188,7 @@
         min-height: 43px;
 
         @media (max-width: 480px) {
-          min-height: 48px; // Larger touch target on mobile
+          min-height: 48px;
         }
 
         .main-btn {
@@ -246,7 +203,7 @@
           will-change: transform, opacity;
 
           @media (max-width: 480px) {
-            padding: 14px 28px; // Larger touch target
+            padding: 14px 28px;
             font-size: 16px;
           }
 
@@ -270,7 +227,6 @@
             }
           }
 
-          // Touch device optimization
           @media (hover: none) and (pointer: coarse) {
             &:active {
               transform: scale(0.95);
@@ -282,23 +238,9 @@
   }
 }
 
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
-
 @keyframes cursor-blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
-}
-
-.cursor-blink {
-  animation: cursor-blink 1s infinite !important;
-}
-
-@keyframes blink-caret {
-  from, to { border-color: rgba(100, 255, 218, 0.8); }
-  50% { border-color: transparent; }
 }
 
 @keyframes shimmer {
@@ -307,7 +249,6 @@
   100% { background-position: 0% 50%; }
 }
 
-// Landscape mobile optimization
 @media only screen and (max-width: 896px) and (max-height: 414px) and (orientation: landscape) {
   .banner {
     .container .section-box-banner {
@@ -331,7 +272,6 @@
   }
 }
 
-// Very small screens
 @media only screen and (max-width: 360px) {
   .banner {
     .container .section-box-banner {

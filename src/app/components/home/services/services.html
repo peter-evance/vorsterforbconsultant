@@ -14,7 +14,12 @@
                             @for (img of project.imgs; track img; let imgIndex = $index) {
                                 <ng-template carouselSlide [id]="project.Title+'_slide_'+i+'_'+imgIndex">
                                     <div class='img-container'>
-                                        <img class='img-feature-proyect rounded' [src]="img" [alt]="project.Title">
+                                        <img class='img-feature-proyect rounded'
+                                             [ngSrc]="img"
+                                             [alt]="project.Title"
+                                             width="600"
+                                             height="360"
+                                             priority>
                                     </div>
                                 </ng-template>
                             }
@@ -24,8 +29,13 @@
                     @if (i%2==0) {
                         <div class="img-feature-proyect-container" data-aos="fade-up" data-aos-duration="1000">
                             <div class="img-feature-proyect-box">
-                                <div class="img-container" style='width: auto;'>
-                                    <img class='img-feature-proyect rounded' [src]="project.imgs[0]" [alt]="project.imgs[0]" width='600px'>
+                                <div class="img-container">
+                                    <img class='img-feature-proyect rounded'
+                                         [ngSrc]="project.imgs[0]"
+                                         [alt]="project.Title"
+                                         width="600"
+                                         height="360"
+                                         priority>
                                 </div>
                             </div>
                         </div>
@@ -68,7 +78,12 @@
                             @for (img of project.imgs; track img; let imgIndex = $index) {
                                 <ng-template carouselSlide [id]="project.Title+'_slide_'+i+'_'+imgIndex">
                                     <div class='img-container'>
-                                        <img class='img-feature-proyect rounded' [src]="img" [alt]="project.Title">
+                                        <img class='img-feature-proyect rounded'
+                                             [ngSrc]="img"
+                                             [alt]="project.Title"
+                                             width="600"
+                                             height="360"
+                                             priority>
                                     </div>
                                 </ng-template>
                             }
@@ -78,8 +93,13 @@
                     @if (i%2!=0) {
                         <div class="img-feature-proyect-container" data-aos="fade-up" data-aos-duration="1000">
                             <div class="img-feature-proyect-box">
-                                <div class="img-container" style='width: auto;'>
-                                    <img class='img-feature-proyect rounded' [src]="project.imgs[0]" [alt]="project.imgs[0]" width='600px'>
+                                <div class="img-container">
+                                    <img class='img-feature-proyect rounded'
+                                         [ngSrc]="project.imgs[0]"
+                                         [alt]="project.Title"
+                                         width="600"
+                                         height="360"
+                                         priority>
                                 </div>
                             </div>
                         </div>

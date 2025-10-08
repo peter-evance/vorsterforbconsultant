@@ -2,48 +2,85 @@
 
 .proyects {
   .proyect-container {
-    height: 360px;
+    // --- REVISED GRID LOGIC ---
+    display: grid;
+    // We define a 12-column grid to position elements.
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
     margin: 100px 0;
-    position: relative;
 
-    .proyect-info-left {
-      width: 50%;
-      margin-right: -57px;
-      margin-left: 0px;
-      display: table;
-      position: relative;
-      z-index: 3;
+    // --- Base styles for all direct children of the grid ---
+    // This is a key fix to prevent wide content like text or images
+    // from "pushing" out of their designated grid area.
+    & > * {
+      min-width: 0;
+      grid-row: 1 / -1; // All children occupy the same row to allow for overlap.
     }
 
+    // --- Base styles for Text & Image elements ---
+    .proyect-info-left,
     .proyect-info-right {
-      width: 50%;
-      margin-left: -57px;
-      margin-right: 0px;
-      display: table;
+      z-index: 2; // Text is always on top.
       position: relative;
-      z-index: 3;
     }
 
+    .owl-carousel-o,
+    .img-feature-proyect-container {
+      z-index: 1; // Image is always in the back.
+      position: relative;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px -15px $ShadowMedium;
+
+      // Subtle tint on the image to improve text contrast.
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: inherit;
+        background-color: rgba($AccentPrimary, 0.1);
+        transition: background-color 0.3s ease;
+      }
+
+      &:hover::after {
+        background-color: transparent;
+      }
+    }
+
+    // --- NEW & ROBUST LAYOUT LOGIC ---
+    // This targets the container IF it has a right-aligned text block.
+    // This is the "Image Left, Text Right" layout.
+    &:has(.proyect-info-right) {
+      .proyect-info-right {
+        grid-column: 7 / -1; // Position text on the right half.
+        text-align: right;
+      }
+      .owl-carousel-o,
+      .img-feature-proyect-container {
+        grid-column: 1 / 8; // Position image on the left, with some overlap.
+      }
+    }
+
+    // This targets the container IF it has a left-aligned text block.
+    // This is the "Text Left, Image Right" layout.
+    &:has(.proyect-info-left) {
+      .proyect-info-left {
+        grid-column: 1 / 7; // Position text on the left half.
+        text-align: left;
+      }
+      .owl-carousel-o,
+      .img-feature-proyect-container {
+        grid-column: 6 / -1; // Position image on the right, with some overlap.
+      }
+    }
+
+    // --- Inner element styling ---
     .proyect-box {
-      display: table-cell;
-      vertical-align: middle;
       position: relative;
       z-index: 2;
-    }
 
-    // Enforce text containment for right-aligned content
-    .proyect-info-right .proyect-box {
-      padding-right: 8px;
-      padding-left: 2px;
-    }
-
-    // Enforce text containment for left-aligned content
-    .proyect-info-left .proyect-box {
-      padding-left: 8px;
-      padding-right: 2px;
-    }
-
-    .proyect-box {
       .feature-proyect {
         font-size: 13px;
         font-weight: normal;
@@ -51,22 +88,18 @@
         font-family: $CodeFont;
         margin-top: 10px;
         padding-top: 0;
-        position: relative;
-        z-index: 4;
       }
 
       .proyect-name {
         font-size: 28px;
         margin: 0 0 20px;
         color: $TextPrimary;
-        position: relative;
-        z-index: 4;
         font-weight: 600;
       }
 
       .proyect-description-box {
+        // **UPDATED: Gradient fade only on desktop (>768px)**
         box-shadow: 0 10px 30px -15px $ShadowMedium;
-        -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
         transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
         position: relative;
         z-index: 2;
@@ -76,28 +109,51 @@
         border-radius: 12px;
         background-color: $BackgroundSecondary;
         border: 1px solid $BorderLight;
+
+        // Gradient fade masks on left and right edges (desktop only)
+        @media (min-width: 769px) {
+          //-webkit-mask-image: linear-gradient(
+          //                to right,
+          //                transparent 0%,
+          //                black 5%,
+          //                black 95%,
+          //                transparent 100%
+          //);
+          mask-image: linear-gradient(
+                          to right,
+                          transparent 0%,
+                          black 5%,
+                          black 95%,
+                          transparent 100%
+          );
+        }
       }
 
       .proyect-skills {
-        position: relative;
-        z-index: 2;
         display: flex;
         flex-wrap: wrap;
-        padding: 0;
+        position: relative;
+        z-index: 2;
         margin: 25px 0 10px;
+        padding: 0;
         list-style: none;
 
+        // Correctly justifies the skills list based on the parent's alignment.
+        .proyect-info-right & {
+          justify-content: flex-end;
+        }
+        .proyect-info-left & {
+          justify-content: flex-start;
+        }
+
         li {
-          margin: 0 10px 10px 0; // Right and bottom margins for proper spacing
+          margin: 0 10px 10px 0;
           font-family: $CodeFont;
           font-size: 13px;
           color: $TextTertiary;
           white-space: nowrap;
 
-          &:last-child {
-            margin-right: 0; // Remove trailing margin on last item
-          }
-
+          &:last-child { margin-right: 0; }
           .technology {
             padding: 6px 12px;
             background-color: $AccentOpacity;
@@ -105,7 +161,6 @@
             display: inline-block;
             border: 1px solid rgba($AccentPrimary, 0.2);
             transition: all 0.2s ease;
-
             &:hover {
               background-color: rgba($AccentPrimary, 0.15);
               border-color: rgba($AccentPrimary, 0.4);
@@ -119,119 +174,53 @@
         margin-top: 10px;
         position: relative;
         z-index: 4;
-
         a {
           display: inline-block;
           margin-left: 16px;
           transition: transform 0.2s ease;
-
-          &:first-child {
-            margin-left: 0;
-          }
-
-          &:hover {
-            transform: translateY(-3px);
-          }
+          &:first-child { margin-left: 0; }
+          &:hover { transform: translateY(-3px); }
         }
-
         i {
           font-size: 22px;
           color: $TextPrimary;
           transition: color 0.25s ease;
-
-          &:hover {
-            color: $AccentPrimary;
-          }
+          &:hover { color: $AccentPrimary; }
         }
       }
     }
   }
-
-  // LEFT-ALIGNED CONTENT: Fade right edge into image
-  .proyect-info-left .proyect-box .proyect-description-box {
-    mask-image: linear-gradient(
-                    to right,
-                    black 0%,
-                    black 70%,
-                    rgba(0, 0, 0, 0.9) 80%,
-                    rgba(0, 0, 0, 0.6) 88%,
-                    rgba(0, 0, 0, 0.3) 94%,
-                    transparent 100%
-    );
-    -webkit-mask-image: -webkit-linear-gradient(
-                    left,
-                    black 0%,
-                    black 70%,
-                    rgba(0, 0, 0, 0.9) 80%,
-                    rgba(0, 0, 0, 0.6) 88%,
-                    rgba(0, 0, 0, 0.3) 94%,
-                    transparent 100%
-    );
-    margin-right: -50px;
-    padding-right: 70px;
-  }
-
-  // RIGHT-ALIGNED CONTENT: Fade left edge into image
-  .proyect-info-right .proyect-box .proyect-description-box {
-    mask-image: linear-gradient(
-                    to left,
-                    black 0%,
-                    black 70%,
-                    rgba(0, 0, 0, 0.9) 80%,
-                    rgba(0, 0, 0, 0.6) 88%,
-                    rgba(0, 0, 0, 0.3) 94%,
-                    transparent 100%
-    );
-    -webkit-mask-image: -webkit-linear-gradient(
-                    right,
-                    black 0%,
-                    black 70%,
-                    rgba(0, 0, 0, 0.9) 80%,
-                    rgba(0, 0, 0, 0.6) 88%,
-                    rgba(0, 0, 0, 0.3) 94%,
-                    transparent 100%
-    );
-    margin-left: -50px;
-    padding-left: 70px;
-  }
 }
 
 .owl-carousel-o {
-  width: 600px;
+  width: 100%; // Ensures responsiveness within the grid.
   position: relative;
-  z-index: 1;
 }
 
 .img-feature-proyect-container {
-  display: none;
+  display: none; // Hidden by default, shown via media query.
 }
 
+// --- Media Queries ---
 @media (min-width: 768px) and (max-width: 1300px) {
   .owl-carousel-o {
     display: none;
   }
 
   .img-feature-proyect-container {
-    width: 50%;
-    display: table !important;
-    height: -webkit-fill-available;
-    position: relative;
-    z-index: 1;
+    display: block !important;
+    width: 100%;
+    height: 100%;
 
     .img-feature-proyect-box {
-      display: table-cell;
-      vertical-align: middle;
+      height: 100%;
+      display: flex;
+      align-items: center;
     }
-
     .img-feature-proyect {
       width: 100%;
       border-radius: 8px;
     }
-  }
-
-  .proyect-info-right,
-  .proyect-info-left {
-    width: 50%;
   }
 }
 
@@ -243,95 +232,74 @@
 }
 
 @media (max-width: 768px) {
-  .owl-carousel-o {
-    display: none;
-  }
+  .proyects .proyect-container {
+    // Revert to a simple block/flex layout for mobile screens.
+    display: flex;
+    margin: 33px 0 !important;
+    height: 100% !important;
 
-  .proyects {
-    .proyect-container {
-      height: 100% !important;
-      margin: 33px 0 !important;
+    // Hide desktop images.
+    .owl-carousel-o,
+    .img-feature-proyect-container {
+      display: none;
+    }
 
-      .proyect-info-left {
-        width: 100%;
-        margin-right: 0;
-      }
+    .proyect-info-left,
+    .proyect-info-right {
+      width: 100%;
+      // Reset any grid properties.
+      grid-column: auto;
+      grid-row: auto;
+      margin: 0 !important;
+      display: block !important;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 8px;
+    }
 
-      .proyect-info-right {
-        width: 100%;
-        margin-left: 0;
-      }
+    .proyect-box {
+      display: block;
+      padding: 20px !important;
+      background: rgba($BackgroundPrimary, 0.98);
+      border-radius: 8px;
+    }
 
-      .proyect-box {
-        padding: 0 !important;
-      }
+    .proyect-description-box {
+      box-shadow: none !important;
+      padding: 25px !important;
+      background-color: rgba($BackgroundSecondary, 0.95) !important;
+      font-size: 16px;
+      border: 1px solid rgba($BorderLight, 0.5);
 
-      // Reset all gradient masks on mobile
-      .proyect-info-left .proyect-box .proyect-description-box,
-      .proyect-info-right .proyect-box .proyect-description-box {
-        mask-image: none;
-        -webkit-mask-image: none;
+      // **UPDATED: NO gradient fade on mobile - explicitly reset mask**
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+
+    // **UPDATED: Force consistent left-to-right text flow on mobile**
+    // Removes directional artifacts from alternating desktop layout
+    .text-right, .text-left {
+      text-align: left !important; // Changed from 'center' to 'left' for natural reading flow
+    }
+
+    .justify-content-end, .justify-content-start {
+      justify-content: flex-start !important; // Changed from 'center' to 'flex-start'
+    }
+
+    // **CRITICAL: Override proyect-links alignment for mobile**
+    .proyect-links {
+      text-align: left !important;
+
+      a:first-child {
         margin-left: 0 !important;
-        margin-right: 0 !important;
-        padding-left: 25px !important;
-        padding-right: 25px !important;
       }
-
-      .proyect-description-box {
-        box-shadow: none !important;
-        position: relative;
-        z-index: 2;
-        padding: 25px !important;
-        background-color: rgba($BackgroundSecondary, 0.95) !important;
-        color: $TextSecondary;
-        font-size: 16px;
-        border-radius: 12px;
-        border: 1px solid rgba($BorderLight, 0.5);
-      }
-
-      .proyect-info-right,
-      .proyect-info-left {
-        display: block !important;
-        margin: 0px !important;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        border-radius: 8px;
-
-        .proyect-box {
-          display: block;
-          padding: 20px !important;
-          background: rgba($BackgroundPrimary, 0.98);
-          border-radius: 8px;
-        }
-      }
-
-      .img-feature-proyect-container {
-        display: none;
-      }
-    }
-
-    .proyect-info-right,
-    .proyect-info-left {
-      padding: 0px;
-    }
-
-    .text-right,
-    .text-left {
-      text-align: center !important;
-    }
-
-    .justify-content-end {
-      justify-content: center !important;
-    }
-
-    .justify-content-start {
-      justify-content: center !important;
     }
   }
 }
 
-// Carousel indicator styling
+
+// --- Carousel and Scrollbar styling ---
 ::ng-deep .owl-theme .owl-dots .owl-dot.active span,
 ::ng-deep .owl-theme .owl-dots .owl-dot:hover span {
   background-color: $AccentPrimary !important;
@@ -342,7 +310,6 @@
   transition: all 0.3s ease;
 }
 
-// Ensure carousel controls don't interfere with layout
 ::ng-deep .owl-carousel .owl-nav {
   margin-top: 10px;
 }
@@ -361,12 +328,24 @@
   }
 }
 
+// **UPDATED: Optimized image container for ngSrc with fixed dimensions**
 .img-container {
-  width: 600px;
-  max-height: 320px;
-  overflow: auto;
+  width: 100%;
+  height: 360px; // Explicit height matching ngSrc dimensions
+  overflow: hidden;
   border-radius: 8px;
   border: 1px solid $BorderLight;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($BackgroundSecondary, 0.3); // Subtle background during load
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Ensures images fill uniformly regardless of aspect ratio
+    object-position: center;
+  }
 }
 
 /* Scrollbar Styling */
@@ -374,23 +353,19 @@
   width: 8px;
   height: 8px;
 }
-
 ::-webkit-scrollbar-track {
   background: rgba($BorderLight, 0.3);
   border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb {
   background: $AccentPrimary;
   border-radius: 4px;
   transition: background 0.3s ease;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: $AccentSecondary;
 }
 
-/* Firefox scrollbar */
 * {
   scrollbar-width: thin;
   scrollbar-color: $AccentPrimary rgba($BorderLight, 0.3);

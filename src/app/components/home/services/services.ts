@@ -1,6 +1,6 @@
 
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { Analytics } from '../../../services/analytics/analytics';
 import {TranslatePipe} from "@ngx-translate/core";
@@ -10,7 +10,8 @@ import {TranslatePipe} from "@ngx-translate/core";
     imports: [
         CarouselModule,
         TranslatePipe,
-        CommonModule
+        CommonModule,
+        NgOptimizedImage
     ],
   templateUrl: './services.html',
   styleUrl: './services.scss'
