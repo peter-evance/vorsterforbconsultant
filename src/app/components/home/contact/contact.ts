@@ -4,13 +4,15 @@ import { Analytics } from '../../../services/analytics/analytics';
 import { Animations } from '../../../services/animations/animations';
 import {TranslatePipe} from "@ngx-translate/core";
 import {DynamicButton} from "../../general/dynamic-button/dynamic-button";
+import {ContactOffice} from "../contact-office/contact-office";
 
 @Component({
     selector: 'app-contact',
     templateUrl: './contact.html',
     imports: [
         TranslatePipe,
-        DynamicButton
+        DynamicButton,
+        ContactOffice
     ],
     styleUrl: './contact.scss'
 })
