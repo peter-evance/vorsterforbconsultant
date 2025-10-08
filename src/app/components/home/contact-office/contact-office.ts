@@ -4,12 +4,14 @@ import { Animations } from '../../../services/animations/animations';
 import { CommonModule } from '@angular/common';
 import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslatePipe } from "@ngx-translate/core";
+import { DynamicButton } from '../../general/dynamic-button/dynamic-button';
 
 @Component({
     selector: 'app-contact-office',
     imports: [
         CommonModule,
         NgbNavModule,
+        DynamicButton
     ],
     templateUrl: './contact-office.html',
     styleUrl: './contact-office.scss'

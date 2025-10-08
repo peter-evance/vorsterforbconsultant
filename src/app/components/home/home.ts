@@ -17,7 +17,6 @@ import {ContactOffice} from "./contact-office/contact-office";
         Services,
         MoreServices,
         Contact,
-        ContactOffice
     ],
   templateUrl: './home.html',
   styleUrl: './home.scss'

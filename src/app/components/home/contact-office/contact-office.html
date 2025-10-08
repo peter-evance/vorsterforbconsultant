@@ -38,6 +38,18 @@
                                         data-animate="fadeInLeft"
                                         [attr.data-animate-delay]="i * 150"
                                 ></p>
+                                <!-- Show schedule button only on the Schedule tab -->
+                                <div class="mt-3" *ngIf="section.tab === 'Schedule'">
+                                    <app-dynamic-button
+                                            [text]="'Schedule a Consultation'"
+                                            href="mailto:forbmanagement@gmail.com?subject=Schedule%20Consultation"
+                                            target="_blank"
+                                            analyticsEvent="click_schedule"
+                                            analyticsCategory="contact"
+                                            analyticsLabel="schedule_email"
+                                            variant="primary">
+                                    </app-dynamic-button>
+                                </div>
                             </div>
                         </ng-template>
                     </li>
