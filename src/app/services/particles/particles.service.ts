@@ -26,12 +26,12 @@ export class Particle {
 
   draw(ctx: CanvasRenderingContext2D): void {
     // Configurar shadow más sutil
-    ctx.shadowColor = 'rgba(100, 255, 218, 0.1)';
+    ctx.shadowColor = 'rgba(184, 134, 11, 0.1)';
     ctx.shadowBlur = 5;
 
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(100, 255, 218, 0.3)'; // Más opaco -> más sutil
+    ctx.fillStyle = 'rgba(184, 134, 11, 0.3)'; // Más opaco -> más sutil
     ctx.fill();
 
     // Resetear shadow
@@ -136,7 +136,7 @@ export class ParticlesService {
         if (distance < 120) {
           this.ctx.beginPath();
           const opacity = (120 - distance) / 120 * 0.2;
-          this.ctx.strokeStyle = `rgba(100, 255, 218, ${opacity})`;
+          this.ctx.strokeStyle = `rgba(184, 134, 11, ${opacity})`;
           this.ctx.lineWidth = 1;
           this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
           this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
