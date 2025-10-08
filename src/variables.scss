@@ -1,15 +1,61 @@
-/* You can add global styles to this file, and also import other style files */
+/* Base Color Palette - Light Theme with Golden-Brown Accents */
 
-$Navy         : #0a192f;
-$LightNavy    : #112240;
-$LightestNavy : #303C55;
-$Slate        : #8892b0;
-$LightSlate   : #a8b2d1;
-$LightestSlate: #ccd6f6;
-$Black        : #0a192f;
-$White        : #e6f1ff;
-$Green        : #64ffda;
-$GreenOpacity : rgba(100,255,218,0.07);
+// Background Colors (Light to Dark)
+$BackgroundPrimary   : #f8f9fa;    // Main background (light grey-white)
+$BackgroundSecondary : #ffffff;    // Pure white for cards/elevated surfaces
+$BackgroundTertiary  : #e9ecef;    // Slightly darker grey for subtle depth
 
-$MainFont: Calibre,San Francisco,SF Pro Text,-apple-system,system-ui,BlinkMacSystemFont,Roboto,Helvetica Neue,Segoe UI,Arial,sans-serif;
+// Text Colors (Dark to Light)
+$TextPrimary   : #1a1a1a;          // Primary text (near-black)
+$TextSecondary : #4a4a4a;          // Secondary text (dark grey)
+$TextTertiary  : #6c757d;          // Tertiary text (medium grey)
+$TextMuted     : #868e96;          // Muted/disabled text
+
+// Accent Colors (Golden-Brown Spectrum)
+$AccentPrimary   : #b8860b;        // Dark goldenrod (primary accent)
+$AccentSecondary : #8b6914;        // Darker golden-brown
+$AccentLight     : #daa520;        // Lighter goldenrod
+$AccentOpacity   : rgba(184, 134, 11, 0.08);  // Subtle accent background
+
+// Border & Divider Colors
+$BorderLight   : #dee2e6;          // Light borders
+$BorderMedium  : #ced4da;          // Medium emphasis borders
+$BorderDark    : #adb5bd;          // Strong borders
+
+// Shadow Colors
+$ShadowLight   : rgba(0, 0, 0, 0.05);
+$ShadowMedium  : rgba(0, 0, 0, 0.1);
+$ShadowStrong  : rgba(0, 0, 0, 0.15);
+
+// Legacy Compatibility Mapping (for gradual migration)
+$Navy          : $BackgroundPrimary;      // Was: #0a192f → Now: #f8f9fa
+$LightNavy     : $BackgroundSecondary;    // Was: #112240 → Now: #ffffff
+$LightestNavy  : $BackgroundTertiary;     // Was: #303C55 → Now: #e9ecef
+$Slate         : $TextTertiary;           // Was: #8892b0 → Now: #6c757d
+$LightSlate    : $TextSecondary;          // Was: #a8b2d1 → Now: #4a4a4a
+$LightestSlate : $TextPrimary;            // Was: #ccd6f6 → Now: #1a1a1a
+$Black         : $TextPrimary;            // Was: #0a192f → Now: #1a1a1a
+$White         : $BackgroundSecondary;    // Was: #e6f1ff → Now: #ffffff
+$Green         : $AccentPrimary;          // Was: #64ffda → Now: #b8860b
+$GreenOpacity  : $AccentOpacity;          // Was: rgba(100,255,218,0.07) → Now: rgba(184,134,11,0.08)
+
+// Typography
+$MainFont: Calibre, San Francisco, SF Pro Text, -apple-system, system-ui, BlinkMacSystemFont, Roboto, Helvetica Neue, Segoe UI, Arial, sans-serif;
 $CodeFont: SF Mono, Fira Code, Fira Mono, Roboto Mono, Lucida Console, Monaco, Monospace;
+
+
+///* You can add global styles to this file, and also import other style files */
+//
+//$Navy         : #0a192f;
+//$LightNavy    : #112240;
+//$LightestNavy : #303C55;
+//$Slate        : #8892b0;
+//$LightSlate   : #a8b2d1;
+//$LightestSlate: #ccd6f6;
+//$Black        : #0a192f;
+//$White        : #e6f1ff;
+//$Green        : #64ffda;
+//$GreenOpacity : rgba(100,255,218,0.07);
+//
+//$MainFont: Calibre,San Francisco,SF Pro Text,-apple-system,system-ui,BlinkMacSystemFont,Roboto,Helvetica Neue,Segoe UI,Arial,sans-serif;
+//$CodeFont: SF Mono, Fira Code, Fira Mono, Roboto Mono, Lucida Console, Monaco, Monospace;
