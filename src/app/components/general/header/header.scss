@@ -1,13 +1,13 @@
 @use "./../../../../variables" as *;
+
 .main-navbar {
   height: 70px;
   background: transparent;
   font-family: $CodeFont;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-  // z-index: 9999999 !important;
 
   &.nav-shadow {
-    background: $Navy;
+    background: $LightNavyTest;
   }
 
   .menu-ul{
@@ -21,8 +21,8 @@
     li:last-child{
       margin-right: 0px;
     }
-
   }
+
   .menu-responsive {
     position: fixed;
     top: 0px;
@@ -35,9 +35,13 @@
     visibility: visible;
     outline: 0px;
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+
     li{
       a{
         display: flex !important;
+        font-weight: 500;
+        line-height: 1.2;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
       }
       .cv-btn{
         width: fit-content !important;
@@ -56,13 +60,14 @@
           width: 35px;
         }
       }
-
     }
   }
+
   .aside-show {
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
     right: 0px;
   }
+
   aside {
     width: 75vw;
     display: flex;
@@ -71,7 +76,7 @@
     -webkit-box-align: center;
     align-items: center;
     flex-direction: column;
-    background-color: $LightNavy;
+    background-color: $LightNavyTest;
     height: 100%;
     position: relative;
     right: -625px;
@@ -80,6 +85,7 @@
     box-shadow: rgba(2, 12, 27, 0.7) -10px 0px 30px -15px;
     padding: 25px;
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+
     nav {
       display: flex;
       -webkit-box-pack: justify;
@@ -90,20 +96,27 @@
       flex-direction: column;
       text-align: center;
       color: $LightestSlate;
+
       ol {
         width: 100%;
         padding: 0px;
         margin: 0px;
         list-style: none;
+
         li {
           font-size: 16px;
           margin: 0px auto 10px;
+
           span {
             display: block;
             color: $Green;
             font-size: 14px;
             margin-bottom: 5px;
+            font-weight: 500;
+            line-height: 1.2;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
           }
+
           a {
             display: inline-block;
             text-decoration-skip-ink: auto;
@@ -114,31 +127,50 @@
             text-decoration: none;
             transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
             padding: 3px 20px 20px;
+            font-weight: 500;
+            line-height: 1.2;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
           }
         }
       }
     }
   }
+
   .cv-btn{
     padding: 7px 15px !important;
   }
+
   .nav-link {
     padding: 5px 0px;
     color: inherit;
     margin: 0px;
     font-size: 13px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+
     &:hover {
       color: $Green;
     }
   }
+
   .nav-number {
     color: $Green;
     font-size: 12px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
   }
+
   .nav-text{
     color: $LightestSlate !important;
     padding-bottom: 4px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
   }
+
   .menu-wrapper {
     top: 0;
     left: 0;
@@ -148,17 +180,20 @@
     height: 60px;
     cursor: pointer;
     z-index: 11;
+
     .hamburger-menu,
     .hamburger-menu:after,
     .hamburger-menu:before {
       width: 36px;
       height: 1.5px;
     }
+
     .hamburger-menu {
       position: relative;
       transform: translateY(25px);
       background: $Green;
       transition: all 0ms 300ms;
+
       &:before {
         content: "";
         position: absolute;
@@ -167,6 +202,7 @@
         background: $Green;
         transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
       }
+
       &:after {
         content: "";
         position: absolute;
@@ -175,13 +211,16 @@
         background: $Green;
         transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
       }
+
       &.animate {
         background: rgba(255, 255, 255, 0);
+
         &:after {
           top: 0;
           transform: rotate(45deg);
           transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
         }
+
         &:before {
           bottom: 0;
           transform: rotate(-45deg);
@@ -196,14 +235,14 @@
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 100; // Muy por encima de todo para evitar interferencias
+  z-index: 100;
   height: 100px;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 }
 
 .nav-shadow {
   height: 70px;
-  background: $Navy !important; // Fondo sólido cuando hay scroll
+  background: $LightNavyTest!important;
   box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 }
@@ -235,6 +274,9 @@
   margin: 0 10px;
   font-size: 13px;
   font-family: $CodeFont;
+  font-weight: 500;
+  line-height: 1.2;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .language-container {
@@ -252,6 +294,8 @@
   padding: 11px 8px !important;
   text-align: center;
   background: #0a192f !important;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 .language-container-selector.active {
@@ -266,18 +310,6 @@
   background: #172a45 !important;
 }
 
-// .language-container-selector.active:after {
-//     content: " ";
-//     background: #58e2c4;
-//     width: 61%;
-//     height: 1px;
-//     position: absolute;
-//     border-radius: 10px;
-//     left: 0;
-//     right: 0;
-//     margin: auto;
-//     margin-top: 21px;
-// }
 .arrow-language {
   font-size: 10px;
   height: 10px;

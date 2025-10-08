@@ -58,19 +58,15 @@ export class ParticlesService {
   init(): void {
     if (this.isInitialized) return;
 
-    console.log('Inicializando partículas globales...');
     this.createCanvas();
     this.initParticles();
     this.startAnimation();
     this.bindResizeEvent();
     this.isInitialized = true;
-    console.log('Partículas inicializadas:', this.particles.length, 'partículas creadas');
   }
 
   destroy(): void {
     if (!this.isInitialized) return;
-
-    console.log('Destruyendo partículas...');
     if (this.animationId) {
       cancelAnimationFrame(this.animationId);
     }
@@ -106,7 +102,6 @@ export class ParticlesService {
   }
 
   private initParticles(): void {
-    // Crear más partículas para que se vean bien en toda la página
     for (let i = 0; i < 80; i++) {
       this.particles.push(new Particle());
     }
@@ -117,14 +112,10 @@ export class ParticlesService {
 
     const animate = () => {
       this.ctx!.clearRect(0, 0, this.canvas!.width, this.canvas!.height);
-
-      // Dibujar partículas
       this.particles.forEach(particle => {
         particle.update();
         particle.draw(this.ctx!);
       });
-
-      // Conectar partículas cercanas
       this.connectParticles();
 
       this.animationId = requestAnimationFrame(animate);
@@ -144,7 +135,7 @@ export class ParticlesService {
 
         if (distance < 120) {
           this.ctx.beginPath();
-          const opacity = (120 - distance) / 120 * 0.2; // Reducido de 0.5 a 0.2
+          const opacity = (120 - distance) / 120 * 0.2;
           this.ctx.strokeStyle = `rgba(100, 255, 218, ${opacity})`;
           this.ctx.lineWidth = 1;
           this.ctx.moveTo(this.particles[i].x, this.particles[i].y);

@@ -6,6 +6,7 @@ import {Jobs} from "./jobs/jobs";
 import {Services} from "./services/services";
 import {MoreServices} from "./more-services/more-services";
 import {Contact} from "./contact/contact";
+import {ContactOffice} from "./contact-office/contact-office";
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,8 @@ import {Contact} from "./contact/contact";
         Jobs,
         Services,
         MoreServices,
-        Contact
+        Contact,
+        ContactOffice
     ],
   templateUrl: './home.html',
   styleUrl: './home.scss'
