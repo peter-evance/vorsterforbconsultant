@@ -40,7 +40,7 @@ jobs:
         run: |
           npm run build -- \
             --configuration production \
-            --base-href=/vorsterforbconsultant/
+            --base-href=/
         env:
           NODE_OPTIONS: '--max-old-space-size=4096'  # Prevent memory issues
 
