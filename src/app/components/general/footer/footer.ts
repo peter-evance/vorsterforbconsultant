@@ -7,7 +7,6 @@ import {Jobs} from "../../home/jobs/jobs";
 @Component({
   selector: 'app-footer',
     imports: [
-        Jobs
     ],
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
