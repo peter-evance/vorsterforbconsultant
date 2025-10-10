@@ -1,78 +1,88 @@
 @use "../../../../variables" as *;
 
-.contact{
+/* Prevent horizontal overflow within the contact section */
+#contact {
+  overflow-x: clip; /* stronger than hidden for modern browsers */
+  max-width: 100vw; /* never exceed viewport width */
+}
 
-    margin: 0 auto;
-    max-width: 1000px;
-    text-align: center;
+/* Keep contents centered and constrained without changing Contact width */
+#contact .section-box {
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
-    height: 100vh;
-    display: table;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
 
-    .container{
-        display: table-cell;
-        vertical-align: middle;
-    }
+/* Ensure the host container cannot overflow the viewport on mobile */
+#contact .container.contact {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.contact{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    min-height: 100vh;
+    display: table;
+    padding: 0 16px; /* safe side padding to avoid edge overflows */
+
+    /* The HTML already applies `container contact` on the same element, so
+       the nested `.container` selector here would not match anything. Remove
+       reliance on it and keep vertical centering via display: table */
 
     .contact-title{
-
         position: relative;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-align-items: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
         align-items: center;
-        white-space: nowrap;
-        font-size: 60px;
+        justify-content: center;
+        white-space: normal; /* allow wrapping on small screens */
+        overflow-wrap: anywhere;
+        word-break: normal;
+        font-size: clamp(28px, 8vw, 60px);
+        line-height: 1.1;
         font-weight: 600;
         color: $LightestSlate;
-        margin: auto;
-        width: fit-content;
+        margin: 0 auto 12px;
+        width: 100%;
+        max-width: 100%;
     }
     .contact-pre-title{
         position: relative;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-align-items: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        margin: 10px 0 40px;
-        width: 100%;
-        white-space: nowrap;
-        font-size: 32px;
         display: block;
+        margin: 10px 0 20px;
+        width: 100%;
+        white-space: normal; /* allow wrapping */
         color: $Green;
         font-size: 16px;
         font-family: $CodeFont;
         font-weight: normal;
-        margin-bottom: 20px;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
         text-align: center;
     }
 
+    p{
+        margin: 0 auto 24px;
+        max-width: 60ch;
+        overflow-wrap: anywhere;
+        word-break: break-word; /* just in case of long URLs/words */
+    }
 }
 
 @media (max-width: 768px){
-    
     .contact{
-        height: 100vh;
-        padding: 0 !important;
+        min-height: 100vh;
+        padding: 0 16px !important;
         margin: 0 auto !important;
         display: table;
-
-        .container{
-            display: table-cell;
-            vertical-align: middle;
-        }
+    }
+    #contact .section-box{
+        max-width: min(600px, 100%);
     }
 }

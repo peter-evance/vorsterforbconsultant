@@ -14,7 +14,7 @@ import {ContactOffice} from "../contact-office/contact-office";
         DynamicButton,
         ContactOffice
     ],
-    styleUrl: './contact.scss'
+    styleUrls: ['./contact.scss']
 })
 export class Contact implements OnInit, AfterViewInit {
 

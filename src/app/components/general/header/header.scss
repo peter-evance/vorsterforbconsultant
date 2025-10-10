@@ -343,3 +343,16 @@
     visibility: inherit;
   }
 }
+
+@media (max-width: 768px) {
+  /* Ensure mobile menu text uses the light theme color */
+  .main-navbar .menu-responsive li a {
+    color: $LightestSlate !important;
+  }
+  .main-navbar aside nav,
+  .main-navbar aside nav a,
+  .main-navbar aside nav li,
+  .main-navbar aside nav span {
+    color: $LightestSlate !important;
+  }
+}
