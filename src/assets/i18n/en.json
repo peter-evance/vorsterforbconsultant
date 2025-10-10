@@ -27,7 +27,7 @@
     {
       "Name": "Mr. John B. Awiti",
       "Title": "Chief Executive Officer (CEO)",
-      "Bio": "Dr. Vorster is a seasoned corporate governance expert with over 25 years in strategic planning and financial oversight. He guides the firm's vision and ensures client solutions meet the highest global standards.",
+      "Bio": "Mr. John Bob Awiti is a seasoned corporate governance  and finance expert with over 25 years in strategic planning and financial oversight. He guides the firm's vision and ensures client solutions meet the highest Eastern and Southern Africa standards.",
       "Img": "assets/images/team/john_bob_awiti_1.jpeg"
     },
     {
@@ -192,9 +192,9 @@
       "Title": "Training & Development Programs",
       "Description": "<span class='underline'>NITA-registered training provider</span> delivering programs across corporate governance, strategic management, financial management, risk management, and leadership development. Our training combines theoretical frameworks with practical application tailored to participant experience levels.",
       "imgs": [
-        "assets/images/training/nita-programs.jpg",
         "assets/images/training/workshop.jpeg",
-        "assets/images/training/certification.webp"
+        "assets/images/training/certification.webp",
+        "assets/images/training/nita2.png"
       ],
       "Technologies": ["NITA Certification", "Leadership Development", "Financial Skills", "Risk Management", "Strategic Thinking"]
     },

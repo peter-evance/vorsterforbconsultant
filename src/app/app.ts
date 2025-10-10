@@ -32,7 +32,7 @@ export class App implements OnInit, OnDestroy {
         private translateService: TranslateService,
         private location: Location,
         private languageService: Language,
-        private particlesService: ParticlesService,
+        // private particlesService: ParticlesService,
         private loadingService: Loading
     ) {}
 
@@ -44,9 +44,9 @@ export class App implements OnInit, OnDestroy {
         this.setDynamicMetadata();
 
         // Initialize particles with slight delay for DOM readiness
-        setTimeout(() => {
-            this.particlesService.init();
-        }, 100);
+        // setTimeout(() => {
+        //     // this.particlesService.init();
+        // }, 100);
     }
 
     /**
@@ -111,7 +111,7 @@ export class App implements OnInit, OnDestroy {
         }
 
         // Destroy particle system
-        this.particlesService.destroy();
+        // this.particlesService.destroy();
     }
 
     /**
