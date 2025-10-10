@@ -11,7 +11,6 @@ import {ContactOffice} from "../contact-office/contact-office";
     templateUrl: './contact.html',
     imports: [
         TranslatePipe,
-        DynamicButton,
         ContactOffice
     ],
     styleUrls: ['./contact.scss']
