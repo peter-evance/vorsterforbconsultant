@@ -25,4 +25,12 @@ import {Jobs} from "../../home/jobs/jobs";
 })
 export class Footer {
     analyticsService = inject(Analytics);
+
+    onBuiltByClick(): void {
+        // 1. First, send the analytics event
+        this.analyticsService.sendAnalyticsEvent('click_github_portfolio_peter-evance', 'footer', 'click');
+
+        // 2. Then, manually trigger the email client
+        window.location.href = 'mailto:peterevan@gmail.com';
+    }
 }
