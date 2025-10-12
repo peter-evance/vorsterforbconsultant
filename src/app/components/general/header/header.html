@@ -1,6 +1,3 @@
-
-<!--header component html-->
-
 <nav [@animateMenu] class="navbar main-navbar on-top" [class.nav-shadow]='this.pageYPosition>0'>
     <div class="container">
         <a class="navbar-brand text-light" [routerLink]="'logo'">
@@ -35,13 +32,15 @@
                 </app-dynamic-button>
             </li>
             <li>
-                <div ngbDropdown class="d-inline-block">
+                <div ngbDropdown [autoClose]="true" class="d-inline-block">
                     <div class="language-container" id="dropdownForm1" ngbDropdownToggle>
-                        <img *ngIf='languageFormControl.value == "en"' width="20px" src="https://www.worldometers.info/img/flags/us-flag.gif" alt="English">
-                        <span *ngIf='languageFormControl.value == "en"' class="flag-text">English</span>
-
-                        <img *ngIf='languageFormControl.value == "sw"' width="20px" src="https://www.worldometers.info/img/flags/ke-flag.gif" alt="Kiswahili">
-                        <span *ngIf='languageFormControl.value == "sw"' class="flag-text">Kiswahili</span>
+                        @if (languageFormControl.value == 'en') {
+                            <img width="20px" src="https://www.worldometers.info/img/flags/us-flag.gif" alt="English">
+                            <span class="flag-text">English</span>
+                        } @else if (languageFormControl.value == 'sw') {
+                            <img width="20px" src="https://www.worldometers.info/img/flags/ke-flag.gif" alt="Kiswahili">
+                            <span class="flag-text">Kiswahili</span>
+                        }
                         <svg class='arrow-language' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
 
                     </div>
@@ -120,8 +119,6 @@
                                 </div>
                             </div>
                         </li>
-
-
                     </ol>
                 </nav>
             </aside>

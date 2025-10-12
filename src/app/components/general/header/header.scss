@@ -345,14 +345,26 @@
 }
 
 @media (max-width: 768px) {
-  /* Ensure mobile menu text uses the light theme color */
+  /* Ensure mobile menu text is readable (white) on dark mobile menu background */
   .main-navbar .menu-responsive li a {
-    color: $LightestSlate !important;
+    color: $White !important;
   }
-  .main-navbar aside nav,
-  .main-navbar aside nav a,
-  .main-navbar aside nav li,
-  .main-navbar aside nav span {
-    color: $LightestSlate !important;
+  /* Make section numbers white on mobile for contrast */
+  .main-navbar .menu-responsive li span,
+  .main-navbar aside nav li span {
+    color: $White !important;
   }
+  /* Scope to links only so section numbers (spans) keep their $Green color (desktop only); mobile overridden above */
+  .main-navbar aside nav a {
+    color: $White !important;
+  }
+  /* Ensure language names are white inside mobile menu language selector */
+  .main-navbar .menu-responsive .language-container .flag-text {
+    color: $White !important;
+  }
+}
+
+/* Ensure the language name is white inside the top flag toggle (desktop/mobile toggle button) */
+#dropdownForm1 .flag-text {
+  color: $White !important;
 }
