@@ -1,7 +1,7 @@
 <nav [@animateMenu] class="navbar main-navbar on-top" [class.nav-shadow]='this.pageYPosition>0'>
     <div class="container">
         <a class="navbar-brand text-light" [routerLink]="'logo'">
-            <img src='assets/images/logo.png' width='150'  alt=""/>
+            <img src='assets/images/logo.png' width='135'  alt=""/>
         </a>
         <ul ngbNav #nav="ngbNav" class="menu-ul">
             <li ngbNavItem (click)='analyticsService.sendAnalyticsEvent("click_about", "menu", "click")'>

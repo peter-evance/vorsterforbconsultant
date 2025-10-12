@@ -88,11 +88,6 @@ export class Banner implements OnInit, AfterViewInit, OnDestroy {
                 action: () => this.animateTypewriter(banner)
             },
             {
-                delay: this.animationTimings.subtitle,
-                element: '.banner-subtitle',
-                action: () => this.animateGlitch(banner)
-            },
-            {
                 delay: this.animationTimings.description,
                 element: '.banner-description',
                 action: () => this.animateMorph(banner)
@@ -160,24 +155,6 @@ export class Banner implements OnInit, AfterViewInit, OnDestroy {
                 clearInterval(typeInterval);
             }
         }, this.typewriterConfig.speed);
-    }
-
-    private animateGlitch(banner: HTMLElement): void {
-        const subtitle = banner.querySelector('.banner-subtitle') as HTMLElement;
-        if (!subtitle) return;
-
-        subtitle.style.opacity = '1';
-        subtitle.style.transform = 'translate(0) scale(1)';
-        subtitle.setAttribute('data-text', subtitle.textContent || '');
-
-        this.applyGlitchEffects(subtitle);
-    }
-
-    private applyGlitchEffects(element: HTMLElement): void {
-        setTimeout(() => {
-            element.style.setProperty('--before-opacity', '0.8');
-            element.style.setProperty('--after-opacity', '0.8');
-        }, 100);
     }
 
     private animateMorph(banner: HTMLElement): void {

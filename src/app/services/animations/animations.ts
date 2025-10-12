@@ -2,7 +2,7 @@ import { Injectable, ElementRef, Renderer2, RendererFactory2 } from '@angular/co
 import { BehaviorSubject } from 'rxjs';
 
 export interface AnimationConfig {
-  type: 'fadeInUp' | 'fadeInDown' | 'fadeInLeft' | 'fadeInRight' | 'scaleIn' | 'slideInUp' | 'slideInDown' | 'rotateIn' | 'morphIn' | 'glitch' | 'typewriter';
+  type: 'fadeInUp' | 'fadeInDown' | 'fadeInLeft' | 'fadeInRight' | 'scaleIn' | 'slideInUp' | 'slideInDown' | 'rotateIn' | 'morphIn' | 'typewriter';
   duration?: number;
   delay?: number;
   easing?: string;
@@ -88,59 +88,13 @@ export class Animations {
 
       .animate-typewriter {
         opacity: 1;
-        border-right: 2px solid rgba(100, 255, 218, 0.8);
+        border-right: 2px solid rgba(184, 134, 11, 0.8);
         animation: blink-caret 1s infinite;
       }
 
       @keyframes blink-caret {
-        from, to { border-color: rgba(100, 255, 218, 0.8); }
+        from, to { border-color: rgba(184, 134, 11, 0.8); }
         50% { border-color: transparent; }
-      }
-
-      .animate-glitch {
-        opacity: 0;
-        position: relative;
-        transform: translate(-5px) scale(0.95);
-        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      }
-
-      .animate-glitch::before,
-      .animate-glitch::after {
-        content: attr(data-text);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-
-      .animate-glitch::before {
-        color: #ff00ff;
-        animation: glitch-1 0.5s infinite;
-        z-index: -1;
-      }
-
-      .animate-glitch::after {
-        color: #00ffff;
-        animation: glitch-2 0.5s infinite;
-        z-index: -2;
-      }
-
-      @keyframes glitch-1 {
-        0%, 100% { transform: translate(0); }
-        20% { transform: translate(-2px, 2px); }
-        40% { transform: translate(-2px, -2px); }
-        60% { transform: translate(2px, 2px); }
-        80% { transform: translate(2px, -2px); }
-      }
-
-      @keyframes glitch-2 {
-        0%, 100% { transform: translate(0); }
-        20% { transform: translate(2px, 2px); }
-        40% { transform: translate(2px, -2px); }
-        60% { transform: translate(-2px, 2px); }
-        80% { transform: translate(-2px, -2px); }
       }
 
       /* Active states */
@@ -157,15 +111,6 @@ export class Animations {
         transform: translate(0) scale(1) rotate(0) !important;
       }
 
-      .animate-glitch.animate-active {
-        opacity: 1;
-      }
-
-      .animate-glitch.animate-active::before,
-      .animate-glitch.animate-active::after {
-        opacity: 0.8;
-      }
-
       /* Hover effects */
       .animate-hover-lift:hover {
         transform: translateY(-10px) scale(1.02);
@@ -173,7 +118,7 @@ export class Animations {
       }
 
       .animate-hover-glow:hover {
-        box-shadow: 0 0 30px rgba(100, 255, 218, 0.3);
+        box-shadow: 0 0 30px rgba(184, 134, 11, 0.3);
       }
 
       /* Stagger animations */
@@ -272,12 +217,6 @@ export class Animations {
 
     // Apply the active animation class
     this.renderer.addClass(element, 'animate-active');
-
-    // Special handling for glitch effect
-    if (config.type === 'glitch') {
-      const text = element.textContent || '';
-      this.renderer.setAttribute(element, 'data-text', text);
-    }
 
     // Special handling for typewriter effect
     if (config.type === 'typewriter') {

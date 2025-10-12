@@ -39,7 +39,7 @@
     font-family: $MainFont;
     font-size: 1.4rem;
     font-weight: 300;
-    color: $Green;
+    color: $AccentPrimary; // Use brown theme primary accent
     letter-spacing: 0.1em;
     animation: pulseText 2s ease-in-out infinite;
   }

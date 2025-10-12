@@ -131,7 +131,7 @@
         }
 
         .cursor {
-          color: rgba(100, 255, 218, 0.8);
+          color: $Green ;
           display: inline-block;
           animation: cursor-blink 1s infinite;
         }
