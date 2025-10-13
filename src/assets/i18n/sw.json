@@ -35,9 +35,14 @@
       "Title": "Mkuu wa Huduma za Kiufundi",
       "Bio": "Bw. Jude ni wakala wa kodi aliyesajiliwa na KRA. Ana shauku ya kujenga uwezo na kuhakikisha matumizi ya vitendo ya maarifa ya kinadharia.",
       "Img": "assets/images/team/jude_odero_ayieko.jpeg"
+    },
+    {
+      "Name": "Bi. Eunice Oduk",
+      "Title": "Mkuu wa Mafunzo na Maendeleo",
+      "Bio": "Kama Mkuu wa Mafunzo na Maendeleo, Bi. Eunice Oduk ndiye mbunifu mkuu wa mipango ya mafunzo ya Vorster Forb iliyosajiliwa na NITA. Ana utaalam wa kuunda suluhisho za mafunzo zinazotafsiri nadharia tata kuwa matumizi ya vitendo kwa wateja wetu mbalimbali. Utaalamu wake unahakikisha programu zetu katika usimamizi wa kimkakati na uongozi zinaleta maboresho yanayopimika katika utendaji na utiifu.",
+      "Img": "assets/images/team/eunice_oduk.jpeg"
     }
   ],
-
   "Experience.Title": "Huduma Zetu",
   "Experience.Jobs": [
     {
