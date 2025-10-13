@@ -27,7 +27,7 @@
     {
       "Name": "Mr. John Bob Awiti",
       "Title": "Chief Executive Officer (CEO)",
-      "Bio": "Mr. John Bob Awiti is a seasoned corporate governance  and finance expert with over 25 years in strategic planning and financial oversight. He guides the firm's vision and ensures client solutions meet the highest Eastern and Southern Africa standards. A registered KRA Tax Agent and NITA Training Provider, he is the founder of Vorster Forb Management Consultants.",
+      "Bio": "Mr. John Bob Awiti is a UK chartered seasoned corporate governance  and finance expert with over 25 years in strategic planning and financial oversight. He guides the firm's vision and ensures client solutions meet the highest Eastern and Southern Africa standards. A registered KRA Tax Agent and NITA Training Provider, he is the founder of Vorster Forb Management Consultants.",
       "Img": "assets/images/team/john_bob_awiti.jpeg"
     },
     {
@@ -35,6 +35,12 @@
       "Title": "Head of Technical Services",
       "Bio": "Mr. Jude is a registered KRA Tax agent. He has a passion for capacity building and ensuring the practical application of theoretical knowledge.",
       "Img": "assets/images/team/jude_odero_ayieko.jpeg"
+    },
+    {
+      "Name": "Miss Eunice Oduk",
+      "Title": "Head of Training and Development",
+      "Bio": "Eunice is an experienced manager.",
+      "Img": "assets/images/team/eunice_oduk.jpeg"
     }
   ],
 
