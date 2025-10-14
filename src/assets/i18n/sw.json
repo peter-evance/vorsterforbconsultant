@@ -26,20 +26,20 @@
   "Leadership.Team": [
     {
       "Name": "Bw. John Bob Awiti",
-      "Title": "Mkurugenzi Mtendaji (CEO)",
-      "Bio": "Kama Mkurugenzi Mtendaji, Bw. John Bob Awiti anaongoza dira ya kimkakati ya kampuni na kuhakikisha suluhisho zote za wateja zinakidhi viwango vya juu vya Afrika Mashariki na Kusini. Yeye ni mhasibu aliyethibitishwa nchini Uingereza na mtaalamu wa usimamizi wa shirika (corporate governance) na masuala ya fedha mwenye uzoefu wa zaidi ya miaka 25 katika mipango ya kimkakati na usimamizi wa kifedha. Ni Wakala wa Kodi wa KRA aliyesajiliwa na Mtoa Mafunzo wa NITA, na ndiye mwanzilishi wa Vorster Forb Management Consultants.",
+      "Title": "Mkurugenzi Mtendaji Mkuu (CEO)",
+      "Bio": "Kama Mkurugenzi Mtendaji Mkuu, Bw. John Bob Awiti anaongoza dira ya kimkakati ya kampuni na kuhakikisha suluhisho zote za wateja zinakidhi kiwango cha juu zaidi cha taaluma katika Afrika Mashariki na Kusini. Yeye ni mhasibu aliyethibitishwa nchini Uingereza (UK chartered accountant) na mtaalamu mwenye uzoefu katika utawala wa shirika (corporate governance) na masuala ya fedha, akiwa na zaidi ya miaka 25 katika mipango ya kimkakati, usimamizi wa kifedha, kodi na ukaguzi. Ni Wakala wa Kodi (Tax Agent) aliyesajiliwa KRA na Mtoa Mafunzo (Training Provider) wa NITA, na ndiye mwanzilishi wa Vorster Forb Management Consultants.",
       "Img": "assets/images/team/john_bob_awiti.jpeg"
     },
     {
       "Name": "Bw. Jude Odero Ayieko",
       "Title": "Mkuu wa Huduma za Kiufundi",
-      "Bio": "Bw. Jude Odero Ayieko anaongoza kitengo cha Huduma za Kiufundi, akilenga kutafsiri nadharia tata za udhibiti na kifedha kuwa suluhisho za kivitendo na zinazoweza kutumika kwa wateja wetu mbalimbali. Kama Wakala wa Kodi wa KRA aliyesajiliwa, anatumia utaalam wake wa kina kuhakikisha ujenzi wa uwezo wa ufanisi na matumizi ya vitendo ya maarifa katika maeneo kama vile utiifu wa kifedha, ushauri wa kodi, na nyaraka za kiufundi.",
+      "Bio": "Bw. Jude Odero Ayieko anaongoza kitengo cha Huduma za Kiufundi, akilenga kutafsiri nadharia tata za udhibiti na kifedha kuwa suluhisho za kivitendo, zinazoweza kutumika kwa wateja wetu mbalimbali. Kama Wakala wa Kodi wa KRA aliyesajiliwa, anatumia utaalam wake wa kina kuhakikisha ujenzi wa uwezo wa ufanisi na utumiaji wa maarifa katika maeneo kama vile utiifu wa kifedha, ushauri wa kodi, na uandaaji wa nyaraka za kiufundi.",
       "Img": "assets/images/team/jude_odero_ayieko.jpeg"
     },
     {
       "Name": "Bi. Eunice Atieno Oduk",
       "Title": "Mkuu wa Mafunzo na Maendeleo",
-      "Bio": "Kama Mkuu wa Mafunzo na Maendeleo, Bi. Eunice Oduk ndiye mbunifu mkuu wa mipango ya mafunzo ya Vorster Forb iliyosajiliwa na NITA. Ana utaalam wa kuunda suluhisho za mafunzo zinazotafsiri nadharia tata kuwa matumizi ya vitendo kwa wateja wetu mbalimbali. Utaalamu wake unahakikisha programu zetu katika usimamizi wa kimkakati na uongozi zinaleta maboresho yanayopimika katika utendaji na utiifu.",
+      "Bio": "Bi. Eunice Atieno Oduk anaongoza kitengo chetu cha Mafunzo na Maendeleo, akitumia uzoefu mkubwa katika elimu ya shirika na ujenzi wa uwezo. Ana jukumu la kubuni na kutekeleza programu zetu zilizoidhinishwa na NITA, akihakikisha zinawawezesha wataalamu kupata ujuzi wa kivitendo katika utawala wa shirika, usimamizi wa kifedha, na uongozi wa kimkakati ili kuendesha mafanikio ya shirika.",
       "Img": "assets/images/team/eunice_oduk.jpeg"
     }
   ],
